@@ -1,19 +1,15 @@
 {
-  "name": "src",
+  "name": "quickstart-docker-express-example",
   "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
-  "dependencies": {
-    "body-parser": "^1.17.2",
-    "express": "^4.15.3",
-    "express-form": "^0.12.6",
-    "request": "^2.81.0"
-  },
-  "devDependencies": {},
+  "description": "Demo to show git push build and deploy",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "main": "server.js",
+  "devDependencies": {}
 }

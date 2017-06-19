@@ -10,15 +10,16 @@ var field = form.field;
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use("/css",express.static("css"));
+app.use("/assets",express.static("assets"));
 
 
 //your routes here
 var root = process.cwd();
 app.get('/', function (req, res) {
     res.sendFile('html/landingpage.html', {root});
-
-
 });
+
 app.get('/login', function (req, res) {
     res.sendFile('html/login.html', {root});
 });

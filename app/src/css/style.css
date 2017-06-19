@@ -1,0 +1,37 @@
+/*.center-pane{
+  margin: 50px;
+}
+.btn-primary{
+  background-color: red;
+}*/
+
+.mainDiv{
+    margin-top: 100px;
+    margin-bottom: 50px;
+    opacity: 0.9;
+}
+.well{
+}
+input{
+    border-radius: 3px;
+    border-style: groove;
+    /*border:1px solid #cccccc*/
+}
+/*#centerPane{
+    margin-left: 200px;
+    margin-right: 200px;
+    width: auto;
+}*/
+.brand{
+    font-family: 'Pangolin', cursive;
+    font-size: 20px;
+}
+
+body{
+    /*background-image: url("https://desiringlife.files.wordpress.com/2011/06/books-movies-music.jpg");
+    background-image: url("https://cdn.patchcdn.com/users/345299/stock/T800x600/2014125498b0d42bbc3.png");*/
+    background-image: url("http://kazuya-akimoto.com/2005/2005imges/4297_triangular_debris.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
