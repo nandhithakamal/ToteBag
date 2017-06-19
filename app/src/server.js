@@ -60,6 +60,40 @@ app.post(
     }
 );
 
+app.post(
+    '/signup',
+    form(
+        field("username").trim().required().is(/\w/),
+        field("password").trim().required().is(/\w/)
+    ),
+     function(req,res){
+
+         request({
+             url: 'http://auth.c100.hasura.me/signup',
+             method: 'POST',
+             headers: {'Content-Type':'application/json'},
+             json:{
+                 'username': req.form.username,
+                 'password': req.form.password
+             }
+
+         }, function(error, response, body){
+                 if(error) {
+                     res.send("Error!\n" + error);
+                 } else if (response.statusCode == 200) {
+
+                     res.send(response);
+                 } else if (response.statusCode == 400){
+                     res.send("Password too short!");
+                 } else if (response.statusCode == 409){
+                     res.send("Username unavailable!s");
+                 } else {
+                     res.send(response);
+                 }
+         });
+
+});
+
 app.listen(8080, function () {
   console.log('Example app listening on port 8080!');
 });
