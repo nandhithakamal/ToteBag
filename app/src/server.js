@@ -29,13 +29,15 @@ app.get('/register', function (req, res) {
 });
 
 app.post(
-    '/check',
+    '/home',
     form(
         field("username").trim().required().is(/\w/),
         field("password").trim().required().is(/\w/)
     ),
     function(req, res){
         if (req.form.isValid){
+            var username = req.form.username;
+            var password = req.form.password;
             request({
             	url: 'http://auth.c100.hasura.me/login',
             	method: 'POST',
@@ -44,10 +46,12 @@ app.post(
 
             }, function(error, response, body){
                 	if(error) {
+
                         res.send("Error!\n" + error);
                 	} else if (response.statusCode == 200) {
-
-                		res.send("Hello, user!");
+                        var authToken = response.body.auth_token;
+                        var hasuraID = response.body.hasure_id;
+                		res.sendFile("html/about.html", {root});
                 	} else if (response.statusCode == 403){
                         res.send("Invalid Creds!");
                     }
