@@ -5,6 +5,8 @@ var form = require('express-form');
 var request = require('request');
 
 
+
+
 var app = express();
 var field = form.field;
 
@@ -12,19 +14,25 @@ var field = form.field;
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/css",express.static("css"));
 app.use("/assets",express.static("assets"));
+app.use("/js",express.static("js"));
+app.set('view engine', 'ejs');
+
 
 
 //your routes here
 var root = process.cwd();
 app.get('/', function (req, res) {
+    //noinspection JSAnnotator
     res.sendFile('html/landingpage.html', {root});
 });
 
 app.get('/login', function (req, res) {
+    //noinspection JSAnnotator
     res.sendFile('html/login.html', {root});
 });
 
 app.get('/register', function (req, res) {
+    //noinspection JSAnnotator
     res.sendFile("html/register.html", {root});
 });
 
@@ -51,7 +59,10 @@ app.post(
                 	} else if (response.statusCode == 200) {
                         var authToken = response.body.auth_token;
                         var hasuraID = response.body.hasure_id;
-                		res.sendFile("html/about.html", {root});
+                		res.render("about.ejs", {
+                            name: username,
+                            token: authToken
+                        });
                 	} else if (response.statusCode == 403){
                         res.send("Invalid Creds!");
                     }
@@ -91,7 +102,7 @@ app.post(
                  } else if (response.statusCode == 400){
                      res.send("Password too short!");
                  } else if (response.statusCode == 409){
-                     res.send("Username unavailable!s");
+                     res.send("Username unavailable!");
                  } else {
                      res.send(response);
                  }
@@ -99,6 +110,8 @@ app.post(
 
 });
 
+
+
 app.listen(8080, function () {
-  console.log('Example app listening on port 8080!');
+  console.log('Totebag on 8080');
 });
