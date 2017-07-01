@@ -35,6 +35,18 @@ app.get('/register', function (req, res) {
     //noinspection JSAnnotator
     res.sendFile("html/register.html", {root});
 });
+app.get('/search', function(req, res){
+    res.render("find.ejs", {
+        name: username,
+        token: authToken
+    });
+});
+app.get('/share', function(req, res){
+    res.render("share.ejs",{
+        name: username,
+        token: authToken
+    });
+});
 
 app.post(
     '/home',
@@ -44,8 +56,8 @@ app.post(
     ),
     function(req, res){
         if (req.form.isValid){
-            var username = req.form.username;
-            var password = req.form.password;
+            username = req.form.username;
+            password = req.form.password;
             request({
             	url: 'http://auth.c100.hasura.me/login',
             	method: 'POST',
@@ -57,9 +69,9 @@ app.post(
 
                         res.send("Error!\n" + error);
                 	} else if (response.statusCode == 200) {
-                        var authToken = response.body.auth_token;
-                        var hasuraID = response.body.hasure_id;
-                		res.render("about.ejs", {
+                        authToken = response.body.auth_token;
+                        hasuraID = response.body.hasure_id;
+                		res.render("find.ejs", {
                             name: username,
                             token: authToken
                         });
