@@ -3,6 +3,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var form = require('express-form');
 var request = require('request');
+var localStorage = require('localStorage');
 
 
 
@@ -23,6 +24,8 @@ app.set('view engine', 'ejs');
 var root = process.cwd();
 app.get('/', function (req, res) {
     //noinspection JSAnnotator
+    //if(localStorage.getItem('token'))
+    localStorage.setItem('blah', 'blah');
     res.sendFile('html/landingpage.html', {root});
 });
 
@@ -38,13 +41,15 @@ app.get('/register', function (req, res) {
 app.get('/search', function(req, res){
     res.render("find.ejs", {
         name: username,
-        token: authToken
+        token: authToken,
+        hid: hasuraID
     });
 });
 app.get('/share', function(req, res){
     res.render("share.ejs",{
         name: username,
-        token: authToken
+        token: authToken,
+        hid: hasuraID
     });
 });
 
@@ -70,10 +75,12 @@ app.post(
                         res.send("Error!\n" + error);
                 	} else if (response.statusCode == 200) {
                         authToken = response.body.auth_token;
-                        hasuraID = response.body.hasure_id;
+                        hasuraID = response.body.hasura_id;
+                        localStorage.setItem('token', authToken);
                 		res.render("find.ejs", {
                             name: username,
-                            token: authToken
+                            token: authToken,
+                            hid: hasuraID
                         });
                 	} else if (response.statusCode == 403){
                         res.send("Invalid Creds!");

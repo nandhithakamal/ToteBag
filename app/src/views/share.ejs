@@ -15,8 +15,58 @@
     </head>
     <body>
         <% include templates/header.ejs %>
-        <div class = "jumbotron">
-            <h1> You will add resources in here. </h1>
+        <div class = "row">
+            <div class = "col-sm-2 col-md-2 col-lg-2"></div>
+            <div class = "jumbotron col-sm-8 col-md-8 col-lg-8">
+                <legend>
+                    <div class = "text-center">
+                        <i class = "fa fa-bullhorn fa-5x fa-lg"></i>
+                    </div>
+                </legend>
+                <div id = "share">
+                    <div id = "form">
+
+            				<div class = "form-group">
+            					<label for = "title" class = "control-label col-sm-2">Title: </label>
+            					<div class = "col-sm-10">
+            						<input type = "text" class = "form-control" id = "title">
+            					</div>
+            				</div>
+            				<div class = "form-group">
+            					<label for = "artist" class = "control-label col-sm-2">Author/Artist: </label>
+            					<div class = "col-sm-10">
+            						<input type = "text" class = "form-control" id = "author">
+            					</div>
+            				</div>
+            				<div class = "form-group">
+            					<label for = "genre" class = "control-label col-sm-2">Genre: </label>
+            					<div class = "col-sm-10">
+            						<input type = "text" class = "form-control" id = "genre">
+            					</div>
+            				</div>
+            				<div class = "form-group">
+            					<label for = "quality" class = "control-label col-sm-2">Quality: </label>
+            					<div class = "col-sm-10">
+            						<input type = "text" class = "form-control" id = "quality">
+            					</div>
+            				</div>
+            				<div class = "form-group">
+            					<label for = "category" class = "control-label col-sm-2">Category </label>
+            					<div class = "col-sm-10">
+            						<input type = "text" class = "form-control" id = "category">
+            					</div>
+            				</div>
+                            <div class = "text-center">
+            				    <button class = "btn-primary btn" id = "shareButton">Share</button>
+                            </div>
+
+		            </div>
+                </div>
+                <div id = "shareResult"></div>
+            </div>
+            <div class = "col-sm-2 col-md-2 col-lg-2"></div>
         </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="/js/actions.js" auth = <%= token %> hasuraID = <%= hid %> ></script>
     </body>
 </html>
