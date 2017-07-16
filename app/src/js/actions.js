@@ -1,12 +1,121 @@
-
 $(document).ready(function () {
     var token = $("#token").html();
     var hasuraID = parseInt($("#hid").html());
+
     token =  'Bearer ' + token;
+
     console.log(token);
     console.log(typeof token);
     console.log(hasuraID);
     console.log(typeof hasuraID);
+
+    function fetchResources(){
+        var key = $("#searchText").val();
+
+        if (key.trim().length > 0) {
+            $.ajax({
+                type: 'POST',
+                crossDomain: true,
+                dataType: 'json',
+                url: 'http://data.c100.hasura.me/v1/query/',
+                success: function (data) {
+                    displayResources(data);
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
+                        "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
+                        + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
+                },
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': token
+
+                },
+                data: JSON.stringify({
+                    "type": "select",
+                    "args": {
+                        "columns": [
+                            "*",
+                            {
+                                "name": "ownerName",
+                                "columns": ["*"]
+                            }
+                        ],
+                        "table": "resource",
+                        "where": {
+                            "title": {"$ilike": "%" + key + "%"}
+                        }
+                    }
+                }),
+                processData: false
+            });
+
+        }else{
+                alert("You need to enter a search text");
+        }
+    }
+
+    function displayResources(data){
+        $("#searchResults").html("");
+        for(var i = 0; i < data.length; i++){
+            var title = data[i].title;
+            var cat = data[i].category;
+            var author = data[i]['author/artist'];
+            var ownerID = data[i].owner;
+            var resourceID = data[i].resourceID;
+            var owner = data[i].ownerName.name;
+
+            $("#searchResults").append("<div class = 'resource well'>" + (i+1).toString() + ".  " + cat + "<br>" + title +
+                " - " + author + "<br>" + "<div class = 'resourceInfo'>" + "<span class = 'requestResource'> Request from " +
+            "</span>" + "<span class = 'owner'>" +  owner +  "</span>" + "<span class = 'ownerID'>" +  ownerID +  "</span>" + "<span class = 'reasourceID'>" + resourceID +  "</span>" + "</div>" + "</div>");
+        }
+    }
+
+    function requestResource(ownerID, resourceID){
+        //var resourceID = $(this).children("span.resourceID").val();
+        //console.log(resourceID);
+        if(ownerID === hasuraID){
+            alert("You own it. ");
+        }
+        else{
+            $.ajax({
+                type: 'POST',
+                crossDomain: true,
+                dataType: 'json',
+                url: 'http://data.c100.hasura.me/v1/query/',
+                success: function(){
+                    alert("Request successful!");
+
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
+                        "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
+                        + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
+                },
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': token
+                },
+                data: JSON.stringify({
+                    "type": "insert",
+                	"args": {
+                		"table": "request",
+                		"objects": [
+                			{
+                				"resourceID": resourceID,
+                				"requestorID": hasuraID,
+                				"requesteeID": ownerID
+                			}
+                		],
+                		"returning": ["requestID"]
+                	}
+                }),
+                processData: false
+            })
+        }
+    }
+
+
     $("#logoutButton").click(function() {
         /*$.post(
          'http://auth.c100.hasura.me/user/logout/',
@@ -45,48 +154,41 @@ $(document).ready(function () {
         });
     });
 
-    $("#search").keypress(function(e){
+    $("#searchBar").keypress(function(e){
         if(e.keyCode == '13'){
-            var key = $('#search').val();
-            //$('#search').html("");
-            if (key.trim().length > 0) {
-                $.ajax({
-                    type: 'POST',
-                    crossDomain: true,
-                    dataType: 'json',
-                    url: 'http://data.c100.hasura.me/v1/query/',
-                    success: function (data) {
-                        $("#searchResults").html(JSON.stringify(data));
-                    },
-                    error: function(jqXHR, textStatus, errorThrown) {
-                        alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
-                            "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
-                            + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
-                    },
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': token
-
-                    },
-                    data: JSON.stringify({
-                        "type": "select",
-                        "args": {
-                            "columns": ["*"],
-                            "table": "resource",
-                            "where": {
-                                "title": {"$ilike": "%" + key + "%"}
-                            }
-                        }
-                    }),
-                    processData: false
-                });
-
-
-            }else{
-                alert("You need to enter a search text");
-            }
+            fetchResources();
         }
     });
+    $("#searchButton").click(function(){
+        fetchResources();
+    });
+
+    $(document).on('click', '.resource', function(){
+        $('.resource').css("background-color","");
+        $(this).css("background-color", "#c9d8f2");
+        //('.resourceInfo').slideUp("fast");
+        $(this).children("div.resourceInfo").slideToggle("fast");
+        //alert("You are attempting to request a resource. ");
+    });
+    $(document).on('click', '.requestResource', function(){
+        $('.requestResource').html("Request from ");
+        //$(this).html("Requesting from... ");
+        var ownerID = $(this).next().html();
+        var resourceID = $(this).next().next().html();
+        console.log("ownerID " + ownerID + " " + typeof ownerID);
+        console.log("resourceID " + resourceID + " " + typeof resourceID);
+        requestResource(ownerID, resourceID);
+    });
+    $(document).on('click', '.owner', function(){
+        $('.requestResource').html("Request from ");
+        //$(this).prev().html("Requesting from... ");
+        var ownerID = parseInt($(this).next().html());
+        var resourceID = parseInt($(this).next().next().html());
+        console.log("ownerID " + ownerID + " " + typeof ownerID);
+        console.log("resourceID " + resourceID + " " + typeof resourceID);
+
+        requestResource(ownerID, resourceID);
+    })
 
     $("#cat").change(function(){
         alert("Trying to change");
@@ -113,7 +215,7 @@ $(document).ready(function () {
             dataType: 'json',
             url: 'http://data.c100.hasura.me/v1/query/',
             success: function (data) {
-                $("#shareResult").html("Sharing is caring. Good job! :D")
+                $("#shareResult").html("Sharing is caring. Good job! :D");
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
@@ -148,5 +250,5 @@ $(document).ready(function () {
 
         });
 
-    })
+    });
 });

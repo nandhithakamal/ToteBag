@@ -4,7 +4,6 @@
     <list default="true" id="d384d854-b3d6-4e2c-b74d-bb509a25f3a0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/js/actions.js" afterPath="$PROJECT_DIR$/app/src/js/actions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/server.js" afterPath="$PROJECT_DIR$/app/src/server.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/views/find.ejs" afterPath="$PROJECT_DIR$/app/src/views/find.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/views/share.ejs" afterPath="$PROJECT_DIR$/app/src/views/share.ejs" />
     </list>
@@ -24,65 +23,48 @@
       <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1275">
-              <caret line="79" column="44" lean-forward="false" selection-start-line="79" selection-start-column="44" selection-end-line="79" selection-end-column="44" />
+            <state relative-caret-position="1394">
+              <caret line="82" column="41" lean-forward="false" selection-start-line="82" selection-start-column="41" selection-end-line="82" selection-end-column="41" />
               <folding>
-                <marker date="1499003470046" expanded="true" signature="2132:2312" ph="{...}" />
-                <marker date="1499003470046" expanded="true" signature="2132:2527" ph="{...}" />
-                <marker date="1499003470046" expanded="true" signature="2132:2539" ph="{...}" />
-                <marker date="1499003470046" expanded="true" signature="2132:2612" ph="{...}" />
-                <marker date="1499003470046" expanded="true" signature="2175:2291" ph="{&quot;name&quot;: username...}" />
-                <marker date="1499003470046" expanded="true" signature="2349:2424" ph="{...}" />
-                <marker date="1499003470046" expanded="true" signature="2450:2513" ph="{...}" />
-                <marker date="1499003470046" expanded="true" signature="2545:2606" ph="{...}" />
-                <marker date="1499003470046" expanded="true" signature="2788:3634" ph="{...}" />
-                <marker date="1499003470046" expanded="true" signature="2808:3094" ph="{&quot;url&quot;: 'http://auth.c100.hasura.me/signup'...}" />
-                <marker date="1499003470046" expanded="true" signature="2971:3082" ph="{&quot;username&quot;: req.form.username...}" />
-                <marker date="1499003470046" expanded="true" signature="3127:3629" ph="{...}" />
-                <marker date="1499003470046" expanded="true" signature="3156:3227" ph="{...}" />
-                <marker date="1499003470046" expanded="true" signature="3265:3327" ph="{...}" />
-                <marker date="1499003470046" expanded="true" signature="3364:3438" ph="{...}" />
-                <marker date="1499003470046" expanded="true" signature="3475:3551" ph="{...}" />
-                <marker date="1499003470046" expanded="true" signature="3557:3618" ph="{...}" />
-                <marker date="1499003470046" expanded="true" signature="3669:3706" ph="{...}" />
+                <marker date="1499425833626" expanded="true" signature="1000:1079" ph="{...}" />
+                <marker date="1499425833626" expanded="true" signature="1029:1079" ph="{&quot;name&quot;: username...}" />
+                <marker date="1499425833626" expanded="true" signature="2354:2380" ph="{&quot;name&quot;: username...}" />
+                <marker date="1499425833626" expanded="true" signature="2354:2401" ph="{...}" />
+                <marker date="1499425833626" expanded="true" signature="2354:2616" ph="{...}" />
+                <marker date="1499425833626" expanded="true" signature="2354:2628" ph="{...}" />
+                <marker date="1499425833626" expanded="true" signature="2354:2701" ph="{...}" />
+                <marker date="1499425833626" expanded="true" signature="2438:2513" ph="{...}" />
+                <marker date="1499425833626" expanded="true" signature="2539:2602" ph="{...}" />
+                <marker date="1499425833626" expanded="true" signature="2634:2695" ph="{...}" />
+                <marker date="1499425833626" expanded="true" signature="2877:3723" ph="{...}" />
+                <marker date="1499425833626" expanded="true" signature="2897:3183" ph="{&quot;url&quot;: 'http://auth.c100.hasura.me/signup'...}" />
+                <marker date="1499425833626" expanded="true" signature="3060:3171" ph="{&quot;username&quot;: req.form.username...}" />
+                <marker date="1499425833626" expanded="true" signature="3216:3718" ph="{...}" />
+                <marker date="1499425833626" expanded="true" signature="3245:3316" ph="{...}" />
+                <marker date="1499425833626" expanded="true" signature="3354:3416" ph="{...}" />
+                <marker date="1499425833626" expanded="true" signature="3453:3527" ph="{...}" />
+                <marker date="1499425833626" expanded="true" signature="3564:3640" ph="{...}" />
+                <marker date="1499425833626" expanded="true" signature="3646:3707" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="actions.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="actions.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/js/actions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="46" column="33" lean-forward="false" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
-              <folding>
-                <marker date="1499003451061" expanded="true" signature="1101:1162" ph="{...}" />
-                <marker date="1499003451061" expanded="true" signature="1101:1751" ph="{&quot;type&quot;: 'POST'...}" />
-                <marker date="1499003451061" expanded="true" signature="1101:1759" ph="{...}" />
-                <marker date="1499003451061" expanded="true" signature="1101:3841" ph="{...}" />
-                <marker date="1499003451061" expanded="true" signature="1225:1617" ph="{...}" />
-                <marker date="1499003451061" expanded="true" signature="1685:1739" ph="{&quot;Authorization&quot;: token...}" />
-                <marker date="1499003451061" expanded="true" signature="1800:3521" ph="{...}" />
-                <marker date="1499003451061" expanded="true" signature="1831:3515" ph="{...}" />
-                <marker date="1499003451061" expanded="true" signature="1951:3428" ph="{...}" />
-                <marker date="1499003451061" expanded="true" signature="1976:3410" ph="{&quot;type&quot;: 'POST'...}" />
-                <marker date="1499003451061" expanded="true" signature="2199:2294" ph="{...}" />
-                <marker date="1499003451061" expanded="true" signature="2364:2788" ph="{...}" />
-                <marker date="1499003451061" expanded="true" signature="2819:2950" ph="{&quot;Content-Type&quot;: 'application/json'...}" />
-                <marker date="1499003451061" expanded="true" signature="2993:3351" ph="{&quot;type&quot;: &quot;select&quot;...}" />
-                <marker date="1499003451061" expanded="true" signature="3069:3329" ph="{&quot;table&quot;: &quot;resource&quot;...}" />
-                <marker date="1499003451061" expanded="true" signature="3203:3303" ph="{...}" />
-                <marker date="1499003451061" expanded="true" signature="3432:3505" ph="{...}" />
-              </folding>
+            <state relative-caret-position="-744">
+              <caret line="66" column="74" lean-forward="false" selection-start-line="66" selection-start-column="74" selection-end-line="66" selection-end-column="74" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="share.ejs" pinned="false" current-in-tab="true">
+      <file leaf-file-name="share.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/views/share.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="41" lean-forward="true" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+            <state relative-caret-position="17">
+              <caret line="18" column="41" lean-forward="false" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
               <folding />
             </state>
           </provider>
@@ -91,8 +73,8 @@
       <file leaf-file-name="header.ejs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/views/templates/header.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="79" lean-forward="false" selection-start-line="16" selection-start-column="79" selection-end-line="16" selection-end-column="79" />
+            <state relative-caret-position="289">
+              <caret line="17" column="79" lean-forward="false" selection-start-line="17" selection-start-column="79" selection-end-line="17" selection-end-column="79" />
               <folding />
             </state>
           </provider>
@@ -138,8 +120,8 @@
         <option value="$PROJECT_DIR$/app/src/css/site.css" />
         <option value="$PROJECT_DIR$/app/src/views/templates/header.ejs" />
         <option value="$PROJECT_DIR$/app/src/views/about.ejs" />
-        <option value="$PROJECT_DIR$/app/src/js/actions.js" />
         <option value="$PROJECT_DIR$/app/src/views/share.ejs" />
+        <option value="$PROJECT_DIR$/app/src/js/actions.js" />
       </list>
     </option>
   </component>
@@ -174,7 +156,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -296,6 +277,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -418,20 +400,22 @@
       <workItem from="1497363568900" duration="1880000" />
       <workItem from="1498615394559" duration="34153000" />
       <workItem from="1498979847601" duration="2120000" />
+      <workItem from="1500198074018" duration="1722000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47679000" />
+    <option name="totallyTimeSpent" value="49401000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17130308" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15062112" sideWeight="0.50292826" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15062112" sideWeight="0.5058565" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15062112" sideWeight="0.49707174" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15062112" sideWeight="0.4941435" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -453,34 +437,103 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/server.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1343">
+          <caret line="79" column="44" lean-forward="false" selection-start-line="79" selection-start-column="44" selection-end-line="79" selection-end-column="44" />
+          <folding>
+            <marker date="1499425833626" expanded="true" signature="1000:1079" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="1029:1079" ph="{&quot;name&quot;: username...}" />
+            <marker date="1499425833626" expanded="true" signature="2354:2380" ph="{&quot;name&quot;: username...}" />
+            <marker date="1499425833626" expanded="true" signature="2354:2401" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2354:2616" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2354:2628" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2354:2701" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2438:2513" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2539:2602" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2634:2695" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2877:3723" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2897:3183" ph="{&quot;url&quot;: 'http://auth.c100.hasura.me/signup'...}" />
+            <marker date="1499425833626" expanded="true" signature="3060:3171" ph="{&quot;username&quot;: req.form.username...}" />
+            <marker date="1499425833626" expanded="true" signature="3216:3718" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="3245:3316" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="3354:3416" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="3453:3527" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="3564:3640" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="3646:3707" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/js/actions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="46" column="33" lean-forward="false" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/views/templates/header.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="79" lean-forward="false" selection-start-line="16" selection-start-column="79" selection-end-line="16" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/css/site.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="22" lean-forward="false" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/html/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="22" lean-forward="false" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/views/share.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="41" lean-forward="true" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/server.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1275">
           <caret line="75" column="44" lean-forward="false" selection-start-line="75" selection-start-column="44" selection-end-line="75" selection-end-column="44" />
           <folding>
-            <marker date="1499003470046" expanded="true" signature="2132:2312" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2132:2527" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2132:2539" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2132:2612" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2175:2291" ph="{&quot;name&quot;: username...}" />
-            <marker date="1499003470046" expanded="true" signature="2349:2424" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2450:2513" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2545:2606" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2788:3634" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2808:3094" ph="{&quot;url&quot;: 'http://auth.c100.hasura.me/signup'...}" />
-            <marker date="1499003470046" expanded="true" signature="2971:3082" ph="{&quot;username&quot;: req.form.username...}" />
-            <marker date="1499003470046" expanded="true" signature="3127:3629" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="3156:3227" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="3265:3327" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="3364:3438" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="3475:3551" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="3557:3618" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="3669:3706" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="1000:1079" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="1029:1079" ph="{&quot;name&quot;: username...}" />
+            <marker date="1499425833626" expanded="true" signature="2354:2380" ph="{&quot;name&quot;: username...}" />
+            <marker date="1499425833626" expanded="true" signature="2354:2401" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2354:2616" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2354:2628" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2354:2701" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2438:2513" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2539:2602" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2634:2695" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2877:3723" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2897:3183" ph="{&quot;url&quot;: 'http://auth.c100.hasura.me/signup'...}" />
+            <marker date="1499425833626" expanded="true" signature="3060:3171" ph="{&quot;username&quot;: req.form.username...}" />
+            <marker date="1499425833626" expanded="true" signature="3216:3718" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="3245:3316" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="3354:3416" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="3453:3527" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="3564:3640" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="3646:3707" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -513,25 +566,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="748">
           <caret line="44" column="33" lean-forward="false" selection-start-line="44" selection-start-column="33" selection-end-line="44" selection-end-column="33" />
-          <folding>
-            <marker date="1499003451061" expanded="true" signature="1101:1162" ph="{...}" />
-            <marker date="1499003451061" expanded="true" signature="1101:1751" ph="{&quot;type&quot;: 'POST'...}" />
-            <marker date="1499003451061" expanded="true" signature="1101:1759" ph="{...}" />
-            <marker date="1499003451061" expanded="true" signature="1101:3841" ph="{...}" />
-            <marker date="1499003451061" expanded="true" signature="1225:1617" ph="{...}" />
-            <marker date="1499003451061" expanded="true" signature="1685:1739" ph="{&quot;Authorization&quot;: token...}" />
-            <marker date="1499003451061" expanded="true" signature="1800:3521" ph="{...}" />
-            <marker date="1499003451061" expanded="true" signature="1831:3515" ph="{...}" />
-            <marker date="1499003451061" expanded="true" signature="1951:3428" ph="{...}" />
-            <marker date="1499003451061" expanded="true" signature="1976:3410" ph="{&quot;type&quot;: 'POST'...}" />
-            <marker date="1499003451061" expanded="true" signature="2199:2294" ph="{...}" />
-            <marker date="1499003451061" expanded="true" signature="2364:2788" ph="{...}" />
-            <marker date="1499003451061" expanded="true" signature="2819:2950" ph="{&quot;Content-Type&quot;: 'application/json'...}" />
-            <marker date="1499003451061" expanded="true" signature="2993:3351" ph="{&quot;type&quot;: &quot;select&quot;...}" />
-            <marker date="1499003451061" expanded="true" signature="3069:3329" ph="{&quot;table&quot;: &quot;resource&quot;...}" />
-            <marker date="1499003451061" expanded="true" signature="3203:3303" ph="{...}" />
-            <marker date="1499003451061" expanded="true" signature="3432:3505" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -540,24 +575,25 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1499003470046" expanded="true" signature="2132:2312" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2132:2527" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2132:2539" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2132:2612" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2175:2291" ph="{&quot;name&quot;: username...}" />
-            <marker date="1499003470046" expanded="true" signature="2349:2424" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2450:2513" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2545:2606" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2788:3634" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2808:3094" ph="{&quot;url&quot;: 'http://auth.c100.hasura.me/signup'...}" />
-            <marker date="1499003470046" expanded="true" signature="2971:3082" ph="{&quot;username&quot;: req.form.username...}" />
-            <marker date="1499003470046" expanded="true" signature="3127:3629" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="3156:3227" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="3265:3327" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="3364:3438" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="3475:3551" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="3557:3618" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="3669:3706" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="1000:1079" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="1029:1079" ph="{&quot;name&quot;: username...}" />
+            <marker date="1499425833626" expanded="true" signature="2354:2380" ph="{&quot;name&quot;: username...}" />
+            <marker date="1499425833626" expanded="true" signature="2354:2401" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2354:2616" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2354:2628" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2354:2701" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2438:2513" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2539:2602" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2634:2695" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2877:3723" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2897:3183" ph="{&quot;url&quot;: 'http://auth.c100.hasura.me/signup'...}" />
+            <marker date="1499425833626" expanded="true" signature="3060:3171" ph="{&quot;username&quot;: req.form.username...}" />
+            <marker date="1499425833626" expanded="true" signature="3216:3718" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="3245:3316" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="3354:3416" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="3453:3527" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="3564:3640" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="3646:3707" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -575,24 +611,25 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1499003470046" expanded="true" signature="2132:2312" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2132:2527" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2132:2539" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2132:2612" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2175:2291" ph="{&quot;name&quot;: username...}" />
-            <marker date="1499003470046" expanded="true" signature="2349:2424" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2450:2513" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2545:2606" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2788:3634" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2808:3094" ph="{&quot;url&quot;: 'http://auth.c100.hasura.me/signup'...}" />
-            <marker date="1499003470046" expanded="true" signature="2971:3082" ph="{&quot;username&quot;: req.form.username...}" />
-            <marker date="1499003470046" expanded="true" signature="3127:3629" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="3156:3227" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="3265:3327" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="3364:3438" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="3475:3551" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="3557:3618" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="3669:3706" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="1000:1079" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="1029:1079" ph="{&quot;name&quot;: username...}" />
+            <marker date="1499425833626" expanded="true" signature="2354:2380" ph="{&quot;name&quot;: username...}" />
+            <marker date="1499425833626" expanded="true" signature="2354:2401" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2354:2616" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2354:2628" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2354:2701" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2438:2513" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2539:2602" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2634:2695" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2877:3723" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2897:3183" ph="{&quot;url&quot;: 'http://auth.c100.hasura.me/signup'...}" />
+            <marker date="1499425833626" expanded="true" signature="3060:3171" ph="{&quot;username&quot;: req.form.username...}" />
+            <marker date="1499425833626" expanded="true" signature="3216:3718" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="3245:3316" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="3354:3416" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="3453:3527" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="3564:3640" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="3646:3707" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -610,24 +647,25 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1499003470046" expanded="true" signature="2132:2312" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2132:2527" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2132:2539" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2132:2612" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2175:2291" ph="{&quot;name&quot;: username...}" />
-            <marker date="1499003470046" expanded="true" signature="2349:2424" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2450:2513" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2545:2606" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2788:3634" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2808:3094" ph="{&quot;url&quot;: 'http://auth.c100.hasura.me/signup'...}" />
-            <marker date="1499003470046" expanded="true" signature="2971:3082" ph="{&quot;username&quot;: req.form.username...}" />
-            <marker date="1499003470046" expanded="true" signature="3127:3629" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="3156:3227" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="3265:3327" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="3364:3438" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="3475:3551" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="3557:3618" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="3669:3706" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="1000:1079" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="1029:1079" ph="{&quot;name&quot;: username...}" />
+            <marker date="1499425833626" expanded="true" signature="2354:2380" ph="{&quot;name&quot;: username...}" />
+            <marker date="1499425833626" expanded="true" signature="2354:2401" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2354:2616" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2354:2628" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2354:2701" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2438:2513" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2539:2602" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2634:2695" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2877:3723" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2897:3183" ph="{&quot;url&quot;: 'http://auth.c100.hasura.me/signup'...}" />
+            <marker date="1499425833626" expanded="true" signature="3060:3171" ph="{&quot;username&quot;: req.form.username...}" />
+            <marker date="1499425833626" expanded="true" signature="3216:3718" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="3245:3316" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="3354:3416" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="3453:3527" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="3564:3640" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="3646:3707" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -645,24 +683,25 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1499003470046" expanded="true" signature="2132:2312" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2132:2527" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2132:2539" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2132:2612" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2175:2291" ph="{&quot;name&quot;: username...}" />
-            <marker date="1499003470046" expanded="true" signature="2349:2424" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2450:2513" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2545:2606" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2788:3634" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2808:3094" ph="{&quot;url&quot;: 'http://auth.c100.hasura.me/signup'...}" />
-            <marker date="1499003470046" expanded="true" signature="2971:3082" ph="{&quot;username&quot;: req.form.username...}" />
-            <marker date="1499003470046" expanded="true" signature="3127:3629" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="3156:3227" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="3265:3327" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="3364:3438" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="3475:3551" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="3557:3618" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="3669:3706" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="1000:1079" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="1029:1079" ph="{&quot;name&quot;: username...}" />
+            <marker date="1499425833626" expanded="true" signature="2354:2380" ph="{&quot;name&quot;: username...}" />
+            <marker date="1499425833626" expanded="true" signature="2354:2401" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2354:2616" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2354:2628" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2354:2701" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2438:2513" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2539:2602" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2634:2695" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2877:3723" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2897:3183" ph="{&quot;url&quot;: 'http://auth.c100.hasura.me/signup'...}" />
+            <marker date="1499425833626" expanded="true" signature="3060:3171" ph="{&quot;username&quot;: req.form.username...}" />
+            <marker date="1499425833626" expanded="true" signature="3216:3718" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="3245:3316" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="3354:3416" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="3453:3527" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="3564:3640" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="3646:3707" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -692,27 +731,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="79" column="44" lean-forward="false" selection-start-line="79" selection-start-column="44" selection-end-line="79" selection-end-column="44" />
+        <state relative-caret-position="1394">
+          <caret line="82" column="41" lean-forward="false" selection-start-line="82" selection-start-column="41" selection-end-line="82" selection-end-column="41" />
           <folding>
-            <marker date="1499003470046" expanded="true" signature="2132:2312" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2132:2527" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2132:2539" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2132:2612" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2175:2291" ph="{&quot;name&quot;: username...}" />
-            <marker date="1499003470046" expanded="true" signature="2349:2424" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2450:2513" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2545:2606" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2788:3634" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="2808:3094" ph="{&quot;url&quot;: 'http://auth.c100.hasura.me/signup'...}" />
-            <marker date="1499003470046" expanded="true" signature="2971:3082" ph="{&quot;username&quot;: req.form.username...}" />
-            <marker date="1499003470046" expanded="true" signature="3127:3629" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="3156:3227" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="3265:3327" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="3364:3438" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="3475:3551" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="3557:3618" ph="{...}" />
-            <marker date="1499003470046" expanded="true" signature="3669:3706" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="1000:1079" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="1029:1079" ph="{&quot;name&quot;: username...}" />
+            <marker date="1499425833626" expanded="true" signature="2354:2380" ph="{&quot;name&quot;: username...}" />
+            <marker date="1499425833626" expanded="true" signature="2354:2401" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2354:2616" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2354:2628" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2354:2701" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2438:2513" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2539:2602" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2634:2695" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2877:3723" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="2897:3183" ph="{&quot;url&quot;: 'http://auth.c100.hasura.me/signup'...}" />
+            <marker date="1499425833626" expanded="true" signature="3060:3171" ph="{&quot;username&quot;: req.form.username...}" />
+            <marker date="1499425833626" expanded="true" signature="3216:3718" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="3245:3316" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="3354:3416" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="3453:3527" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="3564:3640" ph="{...}" />
+            <marker date="1499425833626" expanded="true" signature="3646:3707" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -727,43 +767,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/views/templates/header.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="79" lean-forward="false" selection-start-line="16" selection-start-column="79" selection-end-line="16" selection-end-column="79" />
+        <state relative-caret-position="289">
+          <caret line="17" column="79" lean-forward="false" selection-start-line="17" selection-start-column="79" selection-end-line="17" selection-end-column="79" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/views/about.ejs" />
-    <entry file="file://$PROJECT_DIR$/app/src/js/actions.js">
+    <entry file="file://$PROJECT_DIR$/app/src/views/share.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="46" column="33" lean-forward="false" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
-          <folding>
-            <marker date="1499003451061" expanded="true" signature="1101:1162" ph="{...}" />
-            <marker date="1499003451061" expanded="true" signature="1101:1751" ph="{&quot;type&quot;: 'POST'...}" />
-            <marker date="1499003451061" expanded="true" signature="1101:1759" ph="{...}" />
-            <marker date="1499003451061" expanded="true" signature="1101:3841" ph="{...}" />
-            <marker date="1499003451061" expanded="true" signature="1225:1617" ph="{...}" />
-            <marker date="1499003451061" expanded="true" signature="1685:1739" ph="{&quot;Authorization&quot;: token...}" />
-            <marker date="1499003451061" expanded="true" signature="1800:3521" ph="{...}" />
-            <marker date="1499003451061" expanded="true" signature="1831:3515" ph="{...}" />
-            <marker date="1499003451061" expanded="true" signature="1951:3428" ph="{...}" />
-            <marker date="1499003451061" expanded="true" signature="1976:3410" ph="{&quot;type&quot;: 'POST'...}" />
-            <marker date="1499003451061" expanded="true" signature="2199:2294" ph="{...}" />
-            <marker date="1499003451061" expanded="true" signature="2364:2788" ph="{...}" />
-            <marker date="1499003451061" expanded="true" signature="2819:2950" ph="{&quot;Content-Type&quot;: 'application/json'...}" />
-            <marker date="1499003451061" expanded="true" signature="2993:3351" ph="{&quot;type&quot;: &quot;select&quot;...}" />
-            <marker date="1499003451061" expanded="true" signature="3069:3329" ph="{&quot;table&quot;: &quot;resource&quot;...}" />
-            <marker date="1499003451061" expanded="true" signature="3203:3303" ph="{...}" />
-            <marker date="1499003451061" expanded="true" signature="3432:3505" ph="{...}" />
-          </folding>
+          <caret line="18" column="41" lean-forward="false" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/views/share.ejs">
+    <entry file="file://$PROJECT_DIR$/app/src/js/actions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="41" lean-forward="true" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+        <state relative-caret-position="-744">
+          <caret line="66" column="74" lean-forward="false" selection-start-line="66" selection-start-column="74" selection-end-line="66" selection-end-column="74" />
           <folding />
         </state>
       </provider>
