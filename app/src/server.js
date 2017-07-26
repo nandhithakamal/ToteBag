@@ -52,6 +52,13 @@ app.get('/share', function(req, res){
         hid: hasuraID
     });
 });
+app.get('/me', function(req, res){
+    res.render("profile.ejs", {
+        name: username,
+        token: authToken,
+        hid: hasuraID
+    });
+});
 
 app.post(
     '/home',

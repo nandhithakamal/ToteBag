@@ -74,7 +74,7 @@ $(document).ready(function () {
     function requestResource(ownerID, resourceID){
         //var resourceID = $(this).children("span.resourceID").val();
         //console.log(resourceID);
-        if(ownerID === hasuraID){
+        if(ownerID == hasuraID){
             alert("You own it. ");
         }
         else{
@@ -105,6 +105,7 @@ $(document).ready(function () {
                 				"resourceID": resourceID,
                 				"requestorID": hasuraID,
                 				"requesteeID": ownerID
+
                 			}
                 		],
                 		"returning": ["requestID"]
@@ -173,8 +174,8 @@ $(document).ready(function () {
     $(document).on('click', '.requestResource', function(){
         $('.requestResource').html("Request from ");
         //$(this).html("Requesting from... ");
-        var ownerID = $(this).next().html();
-        var resourceID = $(this).next().next().html();
+        var ownerID = $(this).next().next().html();
+        var resourceID = $(this).next().next().next().html();
         console.log("ownerID " + ownerID + " " + typeof ownerID);
         console.log("resourceID " + resourceID + " " + typeof resourceID);
         requestResource(ownerID, resourceID);
