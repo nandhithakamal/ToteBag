@@ -1,8 +1,8 @@
 $(document).ready(function () {
-    var token = $("#token").html();
-    var hasuraID = parseInt($("#hid").html());
+    var token = localStorage.getItem("authToken");
+    var hasuraID = localStorage.getItem("hasuraID");
 
-    token =  'Bearer ' + token;
+    //token =  'Bearer ' + token;
 
     console.log(token);
     console.log(typeof token);
@@ -138,7 +138,11 @@ $(document).ready(function () {
             url: 'http://auth.c100.hasura.me/user/logout',
             success: function (data) {
                 //alert("You have been logged out! ");
-                localStorage.setItem("Logged In", "false");
+                localStorage.setItem("loggedIn", "false");
+                localStorage.removeItem("hasuraID");
+                localStorage.removeItem("authToken");
+                localStorage.removeItem("username");
+
                 window.location.href = "/";
             },
             error: function (jqXHR, textStatus, errorThrown) {

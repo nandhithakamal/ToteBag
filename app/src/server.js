@@ -5,12 +5,8 @@ var form = require('express-form');
 var request = require('request');
 var localStorage = require('localStorage');
 
-
-
-
 var app = express();
 var field = form.field;
-
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/css",express.static("css"));
@@ -18,9 +14,6 @@ app.use("/assets",express.static("assets"));
 app.use("/js",express.static("js"));
 app.set('view engine', 'ejs');
 
-
-
-//your routes here
 var root = process.cwd();
 app.get('/', function (req, res) {
     //noinspection JSAnnotator
@@ -39,28 +32,16 @@ app.get('/register', function (req, res) {
     res.sendFile("html/register.html", {root});
 });
 app.get('/search', function(req, res){
-    res.render("find.ejs", {
-        name: username,
-        token: authToken,
-        hid: hasuraID
-    });
+    res.render("find.ejs");
 });
 app.get('/share', function(req, res){
-    res.render("share.ejs",{
-        name: username,
-        token: authToken,
-        hid: hasuraID
-    });
+    res.render("share.ejs");
 });
 app.get('/me', function(req, res){
-    res.render("profile.ejs", {
-        name: username,
-        token: authToken,
-        hid: hasuraID
-    });
+    res.render("profile.ejs");
 });
 
-app.post(
+/*app.post(
     '/home',
     form(
         field("username").trim().required().is(/\w/),
@@ -100,7 +81,7 @@ app.post(
             console.log("Invalid form details!");
         }
     }
-);
+);*/
 
 app.post(
     '/signup',

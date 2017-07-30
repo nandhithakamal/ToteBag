@@ -1,7 +1,7 @@
 $(document).ready(function(){
-    var token = $("#token").html();
-    token =  'Bearer ' + token;
-    var hasuraID = parseInt($("#hid").html());
+    var token = localStorage.getItem("authToken");
+    
+    var hasuraID = localStorage.getItem("hasuraID");
 
     $.ajax({
         type: 'POST',
