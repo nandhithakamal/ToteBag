@@ -43,7 +43,12 @@ $(document).ready(function () {
                         ],
                         "table": "resource",
                         "where": {
-                            "title": {"$ilike": "%" + key + "%"}
+                                "title": {
+                                    "$ilike": "%" + key + "%"
+                                },
+                                "owner": {
+                                    "$ne": hasuraID
+                                }
                         }
                     }
                 }),
@@ -64,10 +69,11 @@ $(document).ready(function () {
             var ownerID = data[i].owner;
             var resourceID = data[i].resourceID;
             var owner = data[i].ownerName.name;
+            var quality = data[i].quality;
+            var genre = data[i].genre;
 
             $("#searchResults").append("<div class = 'resource well'>" + (i+1).toString() + ".  " + cat + "<br>" + title +
-                " - " + author + "<br>" + "<div class = 'resourceInfo'>" + "<span class = 'requestResource'> Request from " +
-            "</span>" + "<span class = 'owner'>" +  owner +  "</span>" + "<span class = 'ownerID'>" +  ownerID +  "</span>" + "<span class = 'reasourceID'>" + resourceID +  "</span>" + "</div>" + "</div>");
+                " - " + author + "<br>" + "<div class = 'resourceInfo'>" + quality + ", " + genre + "<br>" + "<span class = 'requestResource'> Request from " + "</span>" + "<span class = 'owner'>" +  owner +  "</span>" + "<span class = 'ownerID'>" +  ownerID +  "</span>" + "<span class = 'resourceID'>" + resourceID +  "</span>" + "</div>" + "</div>");
         }
     }
 
@@ -141,7 +147,7 @@ $(document).ready(function () {
                 localStorage.setItem("loggedIn", "false");
                 localStorage.removeItem("hasuraID");
                 localStorage.removeItem("authToken");
-                localStorage.removeItem("username");
+                localStorage.removeItem("username")
 
                 window.location.href = "/";
             },
@@ -182,6 +188,7 @@ $(document).ready(function () {
         var resourceID = $(this).next().next().next().html();
         console.log("ownerID " + ownerID + " " + typeof ownerID);
         console.log("resourceID " + resourceID + " " + typeof resourceID);
+
         requestResource(ownerID, resourceID);
     });
     $(document).on('click', '.owner', function(){
