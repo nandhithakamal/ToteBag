@@ -83,7 +83,7 @@ app.get('/me', function(req, res){
     }
 );*/
 
-app.post(
+/*app.post(
     '/signup',
     form(
         field("username").trim().required().is(/\w/),
@@ -115,7 +115,7 @@ app.post(
                  }
          });
 
-});
+});*/
 
 
 

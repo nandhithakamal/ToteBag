@@ -18,43 +18,50 @@
         </div>
       <div class = "col-sm-4"></div>
       <div class = "well center-pane col-sm-4">
-        <form class = "form-horizontal" method="post" id = "registerform" action = "/signup">
+        <div class = "form-horizontal" method="post" id = "registerform">
             <div class = "form-group">
-              <label class = "col-sm-3">Name: </label>
-              <input type = "text" class = "col-sm-8" id = "name" name = "name"/><br>
+              <label class = "col-sm-5 text-right">Name: </label>
+              <input type = "text" class = "col-sm-6" id = "name" name = "name"/><br>
             </div>
             <div class = "form-group">
-              <label class = "col-sm-3">Email ID: </label>
-              <input type = "email" class = "col-sm-8" id = "email"/><br>
+              <label class = "col-sm-5 text-right">Email ID: </label>
+              <input type = "email" class = "col-sm-6" id = "email"/><br>
             </div>
           <div class = "form-group">
-            <label class = "col-sm-3">Username: </label>
-            <input type = "text" class = "col-sm-8" id = "username" name = "username"/><br>
+            <label class = "col-sm-5 text-right">Username: </label>
+            <input type = "text" class = "col-sm-6" id = "username" name = "username"/><br>
           </div>
           <div class = "form-group">
-            <label class = "col-sm-3">Password: </label>
-            <input type = "password" class = "col-sm-8" id = "password" name = "password"/><br>
+            <label class = "col-sm-5 text-right">Password: </label>
+            <input type = "password" class = "col-sm-6" id = "password" name = "password"/><br>
+            <div  class = "text-center" id = "passwordError" style = "color: red"></div>
           </div>
           <div class = "form-group">
-            <label class = "col-sm-3">Phone: </label>
-            <input type = "tel" class = "col-sm-8" id = "phone"/><br>
+            <label class = "col-sm-5 text-right">Confirm Password: </label>
+            <input type = "password" class = "col-sm-6" id = "cpassword" name = "cpassword"/><br>
+            <div class = "text-center" id = "cpasswordError" style = "color: red"></div>
+          </div>
+          <div class = "form-group">
+            <label class = "col-sm-5 text-right">Phone: </label>
+            <input type = "tel" class = "col-sm-6" id = "phone"/><br>
           </div>
           <div class = "form-group">
             <div class = "text-center">
                 <div class = "row">
                     <div class = "col-sm-4"></div>
                     <div class = "col-sm-4">
-                        <button class = "btn btn-success btn-md btn-block">Register</button>
+                        <button class = "btn btn-success btn-md btn-block" id = "registerButton">Register</button>
                     </div>
                     <div class = "col-sm-4"></div>
                 </div>
             </div>
             <br>
+            <div class = "text-center" id = "errorMessage" style = "color: red"></div>
             <div class = "text-center">
               <a href = "/login">Existing user? </a>
             </div>
           </div>
-        </form>
+      </div>
       </div>
       <div class = "col-sm-4"></div>
     </div>
@@ -62,5 +69,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src = '/js/register.js'></script>
   </body>
 </html>
