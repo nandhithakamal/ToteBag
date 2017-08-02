@@ -214,12 +214,47 @@ $(document).ready(function () {
         }*/
     });
 
-    $("#shareButton").click(function(){
-        var title = $("#title").val();
+    $(".caret").on('click', function(){
+        $(".resourceMenu").slideToggle("fast");
+    });
+    $("#currResource").on('click', function(){
+        $(".resourceMenu").slideToggle("fast");
+    });
+    $("#bookResource").on('click', function(){
+        $("#currResource").html("Book");
+        $(".resourceMenu").slideUp("fast");
+        $("#addBook").slideDown("fast");
+        $("#addMovie").slideUp("fast");
+        $("#addMusic").slideUp("fast");
+        $("#shareResult").html("");
+
+
+    });
+    $("#movieResource").on('click', function(){
+        $("#currResource").html("Movie");
+        $(".resourceMenu").slideUp("fast");
+        $("#addMovie").slideDown("fast");
+        $("#addMusic").slideUp("fast");
+        $("#addBook").slideUp("fast");
+        $("#shareResult").html("");
+    });
+    $("#musicResource").on('click', function(){
+        $("#currResource").html("Music");
+        $(".resourceMenu").slideUp("fast");
+        $("#addMusic").slideDown("fast");
+        $("#addMovie").slideUp("fast");
+        $("#addBook").slideUp("fast");
+        $("#shareResult").html("");
+    });
+
+
+    $("#bshareButton").click(function(){
+        var title = $("#btitle").val();
         var author = $("#author").val();
-        var genre = $("#genre").val();
-        var quality = $("#quality").val();
-        var category = $("#category").val();
+        var genre = $("#bgenre").val();
+        var quality = $("input[name='bquality']:checked").val();
+        //console.log("Quality" + quality);
+        var category = $("#currResource").html();
 
         $.ajax({
             type: 'POST',
@@ -262,5 +297,131 @@ $(document).ready(function () {
 
         });
 
+    });
+
+    $("#bresetButton").on('click', function(){
+        $("#btitle").val("");
+        $("#author").val("");
+        $("#bgenre").val("");
+        $("input[name='bquality']").prop('checked', false);
+        $("#shareResult").html("");
+    });
+
+    $("#mshareButton").on('click', function(){
+        var title = $("#mtitle").val();
+        var artist = $("#artist").val();
+        var genre = $("#mgenre").val();
+        var bitrate = $("input[name='bitrate']:checked").val();
+        console.log(bitrate);
+        var category = $("#currResource").html();
+
+        $.ajax({
+            type: 'POST',
+            crossDomain: true,
+            dataType: 'json',
+            url: 'http://data.c100.hasura.me/v1/query/',
+            success: function (data) {
+                $("#shareResult").html("Sharing is caring. Good job! :D");
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
+                    "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
+                    + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
+            },
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': token
+
+            },
+            data: JSON.stringify({
+                "type": "insert",
+                "args": {
+                    "table": "resource",
+                    "objects": [
+                        {
+                        "owner": hasuraID,
+                        "title": title,
+                        "author/artist": artist,
+                        "genre": genre,
+                        "quality": bitrate,
+                        "category": category
+
+                        }
+                    ],
+                    "returning": ["resourceID", "title"]
+
+                },
+                "processData": false
+            })
+
+        });
+
+    });
+
+    $("#mresetButton").on('click', function(){
+        $("#mtitle").val("");
+        $("#artist").val("");
+        $("#mgenre").val("");
+        $("input[name='bitrate']").prop('checked', false);
+        $("#shareResult").html("");
+    });
+
+    $("#movshareButton").on('click', function(){
+        var title = $("#movtitle").val();
+        var director = $("#director").val();
+        var genre = $("#movgenre").val();
+        var quality = $("input[name='movquality']:checked").val();
+        console.log(quality);
+        var category = $("#currResource").html();
+
+        $.ajax({
+            type: 'POST',
+            crossDomain: true,
+            dataType: 'json',
+            url: 'http://data.c100.hasura.me/v1/query/',
+            success: function (data) {
+                $("#shareResult").html("Sharing is caring. Good job! :D");
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
+                    "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
+                    + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
+            },
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': token
+
+            },
+            data: JSON.stringify({
+                "type": "insert",
+                "args": {
+                    "table": "resource",
+                    "objects": [
+                        {
+                        "owner": hasuraID,
+                        "title": title,
+                        "author/artist": director,
+                        "genre": genre,
+                        "quality": quality,
+                        "category": category
+
+                        }
+                    ],
+                    "returning": ["resourceID", "title"]
+
+                },
+                "processData": false
+            })
+
+        });
+
+    });
+
+    $("#movresetButton").on('click', function(){
+        $("#movtitle").val("");
+        $("#director").val("");
+        $("#movgenre").val("");
+        $("input[name='movquality']").prop('checked', false);
+        $("#shareResult").html("");
     });
 });

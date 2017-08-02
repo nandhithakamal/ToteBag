@@ -1,6 +1,6 @@
 $(document).ready(function(){
     var token = localStorage.getItem("authToken");
-    
+
     var hasuraID = localStorage.getItem("hasuraID");
 
     $.ajax({
@@ -53,7 +53,7 @@ $(document).ready(function(){
             while(i < n){
                 var owner = data[i].requesteeName.name;
                 var resource = data[i].resourceName.title;
-                $("#requests").append("<br>" + owner + "'s '" + resource);
+                $("#requests").append("<br>" + owner + "'s " + resource);
                 i++;
             }
         },

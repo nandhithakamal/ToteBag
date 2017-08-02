@@ -6,67 +6,167 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
         <title>ToteBag</title>
-        <link rel = "stylesheet" href = "/css/site.css">
-
-        <!-- Bootstrap -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+
     </head>
     <body>
         <% include templates/header.ejs %>
         <div class = "row">
-            <div class = "col-sm-2 col-md-2 col-lg-2"></div>
-            <div class = "jumbotron col-sm-8 col-md-8 col-lg-8"id = "shareBox" >
+            <div class = "col-md-2 col-md-2 col-lg-2"></div>
+            <div class = "jumbotron col-md-8 col-md-8 col-lg-8"id = "shareBox" >
 
                 <div class = "text-center">
                     <i class = "fa fa-bullhorn fa-5x fa-lg"></i>
                 </div>
+                <div class = "dropdown text-center">
+                    <span class = "changeFont">
+                    What do you want to share?</span>
+                    <br>
 
-                <div id = "share">
-                    <div id = "form">
-
-            				<div class = "form-group">
-            					<label for = "title" class = "control-label col-sm-2">Title: </label>
-            					<div class = "col-sm-10">
-            						<input type = "text" class = "form-control" id = "title">
-            					</div>
-            				</div>
-            				<div class = "form-group">
-            					<label for = "artist" class = "control-label col-sm-2">Author/Artist: </label>
-            					<div class = "col-sm-10">
-            						<input type = "text" class = "form-control" id = "author">
-            					</div>
-            				</div>
-            				<div class = "form-group">
-            					<label for = "genre" class = "control-label col-sm-2">Genre: </label>
-            					<div class = "col-sm-10">
-            						<input type = "text" class = "form-control" id = "genre">
-            					</div>
-            				</div>
-            				<div class = "form-group">
-            					<label for = "quality" class = "control-label col-sm-2">Quality: </label>
-            					<div class = "col-sm-10">
-            						<input type = "text" class = "form-control" id = "quality">
-            					</div>
-            				</div>
-            				<div class = "form-group">
-            					<label for = "category" class = "control-label col-sm-2">Category </label>
-            					<div class = "col-sm-10">
-            						<input type = "text" class = "form-control" id = "category">
-            					</div>
-            				</div>
-                            <div class = "text-center">
-            				    <button class = "btn-primary btn" id = "shareButton">Share</button>
+                    <div class = "dropdown-toggle" data-toggle = "dropdown">
+                        <span id = "currResource">Pick Something</span>
+                        <span class = "caret"></span>
+                    </div>
+                    <div class = "resourceMenu text-center">
+                        <div id = "bookResource">Book</div>
+                        <div id = "musicResource">Music</div>
+                        <div id = "movieResource">Movie</div>
+                    </div>
+                    <div id = "addBook">
+                        <div class = "form-group">
+        					<label for = "btitle" class = "control-label col-md-2">Title: </label>
+        					<div class = "col-md-10">
+        						<input type = "text" class = "form-control" id = "btitle">
+        					</div>
+        				</div>
+        				<div class = "form-group">
+        					<label for = "author" class = "control-label col-md-2">Author: </label>
+        					<div class = "col-md-10">
+        						<input type = "text" class = "form-control" id = "author">
+        					</div>
+        				</div>
+        				<div class = "form-group">
+        					<label for = "bgenre" class = "control-label col-md-2">Genre: </label>
+        					<div class = "col-md-10">
+        						<input type = "text" class = "form-control" id = "bgenre">
+        					</div>
+        				</div>
+        				<div class = "form-group">
+        					<label for = "bquality" class = "control-label col-md-2">Quality: </label>
+                            <div class = "col-md-2 text-left">
+        						<label><input type = "radio" name = "bquality" value = "Paperback">Paperback</label>
                             </div>
+                            <div class = "col-md-3 text-left">
+                                <label> <input type = "radio" name = "bquality" value = "Hardcover">Hardcover</label>
+        					</div>
+                            <div class = "col-md-5"></div>
+        				</div>
+                        <div class = "text-center">
+                            <button class = "btn btn-default" id = "dummyButton">Dummy</button>
+                        </div>
+                        <div class = "text-center form-group">
+                            <button class = "btn btn-primary" id = "bshareButton">Share</button>
+                            <button class = "btn btn-danger" id = "bresetButton">Reset</button>
+                        </div>
+                    </div>
 
-		            </div>
+                    <div id = "addMusic">
+                        <div class = "form-group">
+        					<label for = "mtitle" class = "control-label col-md-2">Title: </label>
+        					<div class = "col-md-10">
+        						<input type = "text" class = "form-control" id = "mtitle">
+        					</div>
+        				</div>
+        				<div class = "form-group">
+        					<label for = "artist" class = "control-label col-md-2">Artist: </label>
+        					<div class = "col-md-10">
+        						<input type = "text" class = "form-control" id = "artist">
+        					</div>
+        				</div>
+        				<div class = "form-group">
+        					<label for = "mgenre" class = "control-label col-md-2">Genre: </label>
+        					<div class = "col-md-10">
+        						<input type = "text" class = "form-control" id = "mgenre">
+        					</div>
+        				</div>
+        				<div class = "form-group">
+        					<label for = "bitrate" class = "control-label col-md-2">Bitrate: </label>
+                            <div class = "col-md-2 text-left">
+        						<label><input type = "radio" name = "bitrate" value = "64kbps">64kbps</label>
+                            </div>
+                            <div class = "col-md-2 text-left">
+                                <label> <input type = "radio" name = "bitrate" value = "128kbps">128kbps</label>
+        					</div>
+                            <div class = "col-md-2 text-left">
+                                <label> <input type = "radio" name = "bitrate" value = "320kbps">320kbps</label>
+        					</div>
+                            <div class = "col-md-4"></div>
+        				</div>
+                        <div class = "text-center">
+                            <button class = "btn btn-default" id = "dummyButton">Dummy</button>
+                        </div>
+                        <div class = "text-center form-group">
+                            <button class = "btn btn-primary" id = "mshareButton">Share</button>
+                            <button class = "btn btn-danger" id = "mresetButton">Reset</button>
+                        </div>
+                    </div>
+
+                    <div id = "addMovie">
+                        <div class = "form-group">
+        					<label for = "movtitle" class = "control-label col-md-2">Title: </label>
+        					<div class = "col-md-10">
+        						<input type = "text" class = "form-control" id = "movtitle">
+        					</div>
+        				</div>
+        				<div class = "form-group">
+        					<label for = "director" class = "control-label col-md-2">Director: </label>
+        					<div class = "col-md-10">
+        						<input type = "text" class = "form-control" id = "director">
+        					</div>
+        				</div>
+        				<div class = "form-group">
+        					<label for = "movgenre" class = "control-label col-md-2">Genre: </label>
+        					<div class = "col-md-10">
+        						<input type = "text" class = "form-control" id = "movgenre">
+        					</div>
+        				</div>
+        				<div class = "form-group">
+        					<label for = "movquality" class = "control-label col-md-2">Quality </label>
+                            <div class = "col-md-2 text-left">
+        						<label><input type = "radio" name = "movquality" value= "360p">360p</label>
+                            </div>
+                            <div class = "col-md-2 text-left">
+                                <label> <input type = "radio" name = "movquality" value = "720p">720p</label>
+        					</div>
+                            <div class = "col-md-2 text-left">
+                                <label> <input type = "radio" name = "movquality" value = "1080p">1080p</label>
+        					</div>
+                            <div class = "col-md-2 text-left">
+                                <label> <input type = "radio" name = "movquality" value = "Blu-ray">Blu-ray</label>
+        					</div>
+                            <div class = "col-md-2"></div>
+        				</div>
+                        <div class = "text-center">
+                            <button class = "btn btn-default" id = "dummyButton">Dummy</button>
+                        </div>
+                        <div class = "text-center form-group">
+                            <button class = "btn btn-primary" id = "movshareButton">Share</button>
+                            <button class = "btn btn-danger"id = "movresetButton">Reset</button>
+                        </div>
+                    </div>
+
                 </div>
-                <div id = "shareResult"></div>
+                <div id = "shareResult" class = "text-center"></div>
             </div>
-            <div class = "col-sm-2 col-md-2 col-lg-2"></div>
+            <div class = "col-md-2 col-md-2 col-lg-2"></div>
         </div>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
         <script src="/js/actions.js"></script>
         <style>
             #shareBox{
@@ -79,6 +179,41 @@
             .fa-bullhorn{
                 font-size: 200px;
                 margin-bottom: 20px;
+            }
+            .resourceMenu{
+                display: none;
+                font-family: 'Bree Serif', serif;
+                font-size: 15px;
+
+            }
+            #addBook, #addMovie, #addMusic{
+                display: none;
+            }
+            .caret{
+                cursor: hand;
+                cursor: pointer;
+                font-size: 30px;
+            }
+            #bookResource, #musicResource, #movieResource{
+                cursor: hand;
+                cursor: pointer;
+            }
+            #dummyButton{
+                visibility: hidden;
+            }
+            #shareResult{
+                font-family: 'Bree Serif', serif;
+                font-size: 20px;
+            }
+            .changeFont{
+                font-family: 'Bree Serif', serif;
+                font-size: 40px;
+            }
+            #currResource{
+                font-family: 'Bree Serif', serif;
+                font-size: 30px;
+                cursor: hand;
+                cursor: pointer;
             }
         </style>
     </body>
