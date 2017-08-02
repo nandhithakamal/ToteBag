@@ -24,11 +24,14 @@ $("#loginButton").on('click', function(){
             success: function(data){
                 hasuraID = data["hasura_id"];
                 authToken = data["auth_token"];
+                var date = new Date();
+                date.setTime(date.getTime() + (30 * 24 * 60 * 60  * 1000));
+                date.toGMTString();
                 localStorage.setItem("hasuraID", hasuraID);
                 localStorage.setItem("authToken","Bearer " +  authToken);
                 localStorage.setItem("loggedIn", true);
                 localStorage.setItem("username", username);
-                document.cookie = "authToken = " + authToken;
+                document.cookie = "authToken = " + authToken + "; expires = " + date;
                 window.location.href = "/search";
             },
             error: function(jqXHR, textStatus, errorThrown) {

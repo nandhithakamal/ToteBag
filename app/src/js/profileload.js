@@ -1,6 +1,5 @@
 $(document).ready(function(){
     var token = localStorage.getItem("authToken");
-
     var hasuraID = localStorage.getItem("hasuraID");
 
     $.ajax({
