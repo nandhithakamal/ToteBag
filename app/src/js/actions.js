@@ -226,9 +226,8 @@ $(document).ready(function () {
         $("#addBook").slideDown("fast");
         $("#addMovie").slideUp("fast");
         $("#addMusic").slideUp("fast");
+        $(".shareError").html("");
         $("#shareResult").html("");
-
-
     });
     $("#movieResource").on('click', function(){
         $("#currResource").html("Movie");
@@ -236,6 +235,7 @@ $(document).ready(function () {
         $("#addMovie").slideDown("fast");
         $("#addMusic").slideUp("fast");
         $("#addBook").slideUp("fast");
+        $(".shareError").html("");
         $("#shareResult").html("");
     });
     $("#musicResource").on('click', function(){
@@ -244,6 +244,7 @@ $(document).ready(function () {
         $("#addMusic").slideDown("fast");
         $("#addMovie").slideUp("fast");
         $("#addBook").slideUp("fast");
+        $(".shareError").html("");
         $("#shareResult").html("");
     });
 
@@ -256,46 +257,51 @@ $(document).ready(function () {
         //console.log("Quality" + quality);
         var category = $("#currResource").html();
 
-        $.ajax({
-            type: 'POST',
-            crossDomain: true,
-            dataType: 'json',
-            url: 'http://data.c100.hasura.me/v1/query/',
-            success: function (data) {
-                $("#shareResult").html("Sharing is caring. Good job! :D");
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
-                    "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
-                    + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
-            },
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': token
-
-            },
-            data: JSON.stringify({
-                "type": "insert",
-                "args": {
-                    "table": "resource",
-                    "objects": [
-                        {
-                        "owner": hasuraID,
-                        "title": title,
-                        "author/artist": author,
-                        "genre": genre,
-                        "quality": quality,
-                        "category": category
-
-                        }
-                    ],
-                    "returning": ["resourceID", "title"]
+        if(title === "" || author === ""){
+            $(".shareError").html("Please fill all fields!");
+        }
+        else{
+            $.ajax({
+                type: 'POST',
+                crossDomain: true,
+                dataType: 'json',
+                url: 'http://data.c100.hasura.me/v1/query/',
+                success: function (data) {
+                    $("#shareResult").html("Sharing is caring. Good job! :D");
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
+                        "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
+                        + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
+                },
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': token
 
                 },
-                "processData": false
-            })
+                data: JSON.stringify({
+                    "type": "insert",
+                    "args": {
+                        "table": "resource",
+                        "objects": [
+                            {
+                            "owner": hasuraID,
+                            "title": title,
+                            "author/artist": author,
+                            "genre": genre,
+                            "quality": quality,
+                            "category": category
 
-        });
+                            }
+                        ],
+                        "returning": ["resourceID", "title"]
+
+                    },
+                    "processData": false
+                })
+
+            });
+        }
 
     });
 
@@ -304,6 +310,7 @@ $(document).ready(function () {
         $("#author").val("");
         $("#bgenre").val("");
         $("input[name='bquality']").prop('checked', false);
+        $(".shareError").html("");
         $("#shareResult").html("");
     });
 
@@ -315,46 +322,52 @@ $(document).ready(function () {
         console.log(bitrate);
         var category = $("#currResource").html();
 
-        $.ajax({
-            type: 'POST',
-            crossDomain: true,
-            dataType: 'json',
-            url: 'http://data.c100.hasura.me/v1/query/',
-            success: function (data) {
-                $("#shareResult").html("Sharing is caring. Good job! :D");
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
-                    "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
-                    + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
-            },
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': token
+        if(title === "" || artist === ""){
+            $(".shareError").html("Please fill all fields!");
+        }
+        else{
 
-            },
-            data: JSON.stringify({
-                "type": "insert",
-                "args": {
-                    "table": "resource",
-                    "objects": [
-                        {
-                        "owner": hasuraID,
-                        "title": title,
-                        "author/artist": artist,
-                        "genre": genre,
-                        "quality": bitrate,
-                        "category": category
-
-                        }
-                    ],
-                    "returning": ["resourceID", "title"]
+            $.ajax({
+                type: 'POST',
+                crossDomain: true,
+                dataType: 'json',
+                url: 'http://data.c100.hasura.me/v1/query/',
+                success: function (data) {
+                    $("#shareResult").html("Sharing is caring. Good job! :D");
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
+                        "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
+                        + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
+                },
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': token
 
                 },
-                "processData": false
-            })
+                data: JSON.stringify({
+                    "type": "insert",
+                    "args": {
+                        "table": "resource",
+                        "objects": [
+                            {
+                            "owner": hasuraID,
+                            "title": title,
+                            "author/artist": artist,
+                            "genre": genre,
+                            "quality": bitrate,
+                            "category": category
 
-        });
+                            }
+                        ],
+                        "returning": ["resourceID", "title"]
+
+                    },
+                    "processData": false
+                })
+
+            });
+        }
 
     });
 
@@ -363,6 +376,7 @@ $(document).ready(function () {
         $("#artist").val("");
         $("#mgenre").val("");
         $("input[name='bitrate']").prop('checked', false);
+        $(".shareError").html("");
         $("#shareResult").html("");
     });
 
@@ -374,46 +388,51 @@ $(document).ready(function () {
         console.log(quality);
         var category = $("#currResource").html();
 
-        $.ajax({
-            type: 'POST',
-            crossDomain: true,
-            dataType: 'json',
-            url: 'http://data.c100.hasura.me/v1/query/',
-            success: function (data) {
-                $("#shareResult").html("Sharing is caring. Good job! :D");
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
-                    "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
-                    + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
-            },
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': token
-
-            },
-            data: JSON.stringify({
-                "type": "insert",
-                "args": {
-                    "table": "resource",
-                    "objects": [
-                        {
-                        "owner": hasuraID,
-                        "title": title,
-                        "author/artist": director,
-                        "genre": genre,
-                        "quality": quality,
-                        "category": category
-
-                        }
-                    ],
-                    "returning": ["resourceID", "title"]
+        if(title === "" || director === ""){
+            $(".shareError").html("Please fill all fields!");
+        }
+        else{
+            $.ajax({
+                type: 'POST',
+                crossDomain: true,
+                dataType: 'json',
+                url: 'http://data.c100.hasura.me/v1/query/',
+                success: function (data) {
+                    $("#shareResult").html("Sharing is caring. Good job! :D");
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
+                        "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
+                        + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
+                },
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': token
 
                 },
-                "processData": false
-            })
+                data: JSON.stringify({
+                    "type": "insert",
+                    "args": {
+                        "table": "resource",
+                        "objects": [
+                            {
+                            "owner": hasuraID,
+                            "title": title,
+                            "author/artist": director,
+                            "genre": genre,
+                            "quality": quality,
+                            "category": category
 
-        });
+                            }
+                        ],
+                        "returning": ["resourceID", "title"]
+
+                    },
+                    "processData": false
+                })
+
+            });
+        }
 
     });
 
@@ -422,6 +441,7 @@ $(document).ready(function () {
         $("#director").val("");
         $("#movgenre").val("");
         $("input[name='movquality']").prop('checked', false);
+        $(".shareError").html("");
         $("#shareResult").html("");
     });
 });
