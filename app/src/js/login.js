@@ -28,6 +28,7 @@ $("#loginButton").on('click', function(){
                 localStorage.setItem("authToken","Bearer " +  authToken);
                 localStorage.setItem("loggedIn", true);
                 localStorage.setItem("username", username);
+                document.cookie = "authToken = " + authToken;
                 window.location.href = "/search";
             },
             error: function(jqXHR, textStatus, errorThrown) {

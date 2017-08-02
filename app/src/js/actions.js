@@ -124,19 +124,6 @@ $(document).ready(function () {
 
 
     $("#logoutButton").click(function() {
-        /*$.post(
-         'http://auth.c100.hasura.me/user/logout/',
-         {
-         'Authorization': token
-
-         })
-         .done( function(msg) {
-         alert(msg);
-         })
-         .fail( function(xhr, textStatus, errorThrown) {
-         alert("onreadystatechange: " + xhr.onreadystatechange + "\nready" +
-         "State: " + xhr.readyState + "\nresponseText: " + xhr.responseText + "\nresponseXML: " + xhr.responseXML + "\nstatus: " + xhr.status + "\nstatusText: " + xhr.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
-         });*/
         $.ajax({
             type: 'POST',
             crossDomain: true,
@@ -147,8 +134,8 @@ $(document).ready(function () {
                 localStorage.setItem("loggedIn", "false");
                 localStorage.removeItem("hasuraID");
                 localStorage.removeItem("authToken");
-                localStorage.removeItem("username")
-
+                localStorage.removeItem("username");
+                document.cookie = "authToken = false";
                 window.location.href = "/";
             },
             error: function (jqXHR, textStatus, errorThrown) {

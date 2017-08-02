@@ -99,6 +99,10 @@ $(document).ready(function(){
             success: function (data) {
                 //alert("You have been logged out! ");
                 localStorage.setItem("Logged In", "false");
+                localStorage.removeItem("hasuraID");
+                localStorage.removeItem("authToken");
+                localStorage.removeItem("username");
+                document.cookie = "authToken = false";
                 window.location.href = "/";
             },
             error: function (jqXHR, textStatus, errorThrown) {

@@ -29,7 +29,7 @@
                             <button class = "btn btn-primary" id = "searchButton"><i class = "fa fa-search"></i></button>
                         </div>
                     </div>
-                    <div id = "searchResults">
+                    <div id = "searchResults" class = "pre-scrollable">
                     </div>
 
               </div>
@@ -40,12 +40,19 @@
       </div>
      <script src="js/actions.js"> </script>
       <style>
+          body{
+              padding: 50px;
+              background-image: url("http://eskipaper.com/images/tumblr-backgrounds-9.jpg");
+              background-repeat: no-repeat;
+              background-position: center;
+
+
+          }
           #searchBar{
               margin-top: 100px;
               margin-bottom: 30px;
           }
           .resource{
-              background-color: #efe469;
               font-size: 18px;
               margin-top: -20px;
               cursor: hand;
@@ -60,6 +67,9 @@
           .requestResource, .owner{
               color: blue;
               font-style: oblique;
+          }
+          .well{
+              background-color: white;
           }
 
       </style>
