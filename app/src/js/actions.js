@@ -182,7 +182,7 @@ $(document).ready(function () {
 
     $(document).on('click', '.resource', function(){
         $('.resource').css("background-color","");
-        $(this).css("background-color", "#c9d8f2");
+        $(this).css("background-color", "#edd09c");
         //('.resourceInfo').slideUp("fast");
         $(this).children("div.resourceInfo").slideToggle("fast");
         //alert("You are attempting to request a resource. ");

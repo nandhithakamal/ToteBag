@@ -1,7 +1,9 @@
 $(document).ready(function(){
     var token = localStorage.getItem("authToken");
     var hasuraID = localStorage.getItem("hasuraID");
+    var username = localStorage.getItem("username");
 
+    $("#username").html(username);
     $.ajax({
         type: 'POST',
         crossDomain: true,
@@ -11,14 +13,19 @@ $(document).ready(function(){
             var n = data.length;
             var i = 0;
             while(i < n){
-                $("#resources").append("<br>" + JSON.stringify(data[i]));
+                $("#resources").append("<span class = 'cat'>" + data[i].category + "</span>" + ":    " + data[i].title + " - " + data[i]["author/artist"] + "<br>");
                 i++;
             }
         },
         error: function(jqXHR, textStatus, errorThrown) {
-            alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
-                "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
-                + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
+            if(jqXHR.status == 401){
+                window.location.href = "/";
+            }
+            else{
+                alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
+                    "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
+                    + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
+            }
         },
         headers: {
             'Content-Type':'application/json',
@@ -35,6 +42,12 @@ $(document).ready(function(){
                 "table": "resource",
                 "where": {
                     "owner": hasuraID
+                },
+                "order_by": {
+                    "column": "category",
+                    "order": "asc",
+                    "nulls": "last"
+
                 }
             }
         }),
@@ -57,9 +70,14 @@ $(document).ready(function(){
             }
         },
         error: function(jqXHR, textStatus, errorThrown) {
-            alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
-                "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
-                + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
+            if(jqXHR.status == 401){
+                window.location.href = "/";
+            }
+            else{
+                alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
+                    "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
+                    + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
+            }
         },
         headers: {
             'Content-Type':'application/json',
@@ -105,9 +123,14 @@ $(document).ready(function(){
                 window.location.href = "/";
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
-                    "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
-                    + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
+                if(jqXHR.status == 401){
+                    window.location.href = "/";
+                }
+                else{
+                    alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
+                        "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
+                        + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
+                }
             },
             contentType: 'application/json',
             headers: {

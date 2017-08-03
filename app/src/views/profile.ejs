@@ -21,22 +21,51 @@
     <body>
         <% include templates/header.ejs %>
         <div class = "container-fluid" id = "profile">
-            <div class = "well">
-                <div class = "name"></div>
-                <br>
-                <div id = "resources">
-                    Resources: Your resources here
+            <div class = "col-md-2"></div>
+            <div class = "well col-md-8">
+                <div class = "row">
+                    <div class = "col-md-2 subheading">Username</div>
+                    <div class = "col-md-10" id = "username"></div>
+                    <br>
+                    <br>
                 </div>
-                <br>
-                <div id = "requests">
-                Requests: Resources you have requested
+                <hr>
+                <div class = "row">
+                    <div class = "col-md-2 subheading">Your resources</div>
+                    <div class = "col-md-10" id = "resources"></div>
+                    <br>
+                    <br>
+                </div>
+                <div class = "row" id = "requestsDiv">
+                    <div class = "col-md-2 subheading">Requests you made</div>
+                    <div class = "col-md-10" id = "requests"></div>
                 </div>
             </div>
+            <div class = "col-md-2"></div>
         </div>
         <script  src = "/js/profileload.js"></script>
         <style>
             #profile{
                 margin-top: 70px;
+            }
+            body{
+                padding: 50px;
+                background-image: url("http://eskipaper.com/images/tumblr-backgrounds-9.jpg");
+                background-repeat: no-repeat;
+                background-position: center;
+                font-family: 'Bree Serif', serif;
+                font-size: 15px;
+            }
+            .subheading{
+                font-size: 22px;
+                color: #3b3a3f;
+            }
+            #requestsDiv{
+                display: none;
+            }
+            .cat{
+                font-size: 18px;
+                color: #4e4e51;
             }
         </style>
     </body>
