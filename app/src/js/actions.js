@@ -22,9 +22,15 @@ $(document).ready(function () {
                     displayResources(data);
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
-                    alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
-                        "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
-                        + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
+                    if(jqXHR.status == 401){
+                        window.location.href = "/";
+                        console.log("Invalid user");
+                    }
+                    else{
+                        alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
+                            "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
+                            + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
+                    }
                 },
                 headers: {
                     'Content-Type': 'application/json',
@@ -59,6 +65,7 @@ $(document).ready(function () {
                 alert("You need to enter a search text");
         }
     }
+    //alert("You need to enter a search text");
 
     function displayResources(data){
         $("#searchResults").html("");
@@ -94,9 +101,15 @@ $(document).ready(function () {
 
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
-                    alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
-                        "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
-                        + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
+                    if(jqXHR.status == 401){
+                        window.location.href = "/";
+                        console.log("Invalid user");
+                    }
+                    else{
+                        alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
+                            "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
+                            + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
+                    }
                 },
                 headers: {
                     'Content-Type': 'application/json',
@@ -139,9 +152,15 @@ $(document).ready(function () {
                 window.location.href = "/";
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
-                    "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
-                    + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
+                if(jqXHR.status == 401){
+                    window.location.href = "/";
+                    console.log("Logged out already");
+                }
+                else{
+                    alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
+                        "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
+                        + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
+                }
             },
             contentType: 'application/json',
             headers: {
@@ -257,9 +276,15 @@ $(document).ready(function () {
                     $("#shareResult").html("Sharing is caring. Good job! :D");
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
-                    alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
-                        "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
-                        + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
+                    if(jqXHR.status == 401){
+                        window.location.href = "/";
+                        console.log("Invalid user");
+                    }
+                    else{
+                        alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
+                            "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
+                            + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
+                    }
                 },
                 headers: {
                     'Content-Type': 'application/json',
@@ -323,9 +348,15 @@ $(document).ready(function () {
                     $("#shareResult").html("Sharing is caring. Good job! :D");
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
-                    alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
-                        "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
-                        + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
+                    if(jqXHR.status == 401){
+                        window.location.href = "/";
+                        console.log("Invalid user");
+                    }
+                    else{
+                        alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
+                            "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
+                            + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
+                    }
                 },
                 headers: {
                     'Content-Type': 'application/json',
@@ -388,9 +419,15 @@ $(document).ready(function () {
                     $("#shareResult").html("Sharing is caring. Good job! :D");
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
-                    alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
-                        "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
-                        + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
+                    if(jqXHR.status == 401){
+                        console.log("Invalid user");
+                        window.location.href = "/";
+                    }
+                    else{
+                        alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
+                            "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
+                            + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
+                    }
                 },
                 headers: {
                     'Content-Type': 'application/json',

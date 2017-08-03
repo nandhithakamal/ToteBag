@@ -37,9 +37,6 @@ $("#loginButton").on('click', function(){
             error: function(jqXHR, textStatus, errorThrown) {
                 if(jqXHR.status == 403)
                     $("#errorMessage").html("Invalid username / password");
-                alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
-                    "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
-                    + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
             },
             processData: false
 
