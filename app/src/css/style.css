@@ -8,9 +8,10 @@
 .mainDiv{
     margin-top: 50px;
     margin-bottom: 50px;
-    opacity: 0.9;
+
 }
-.well{
+.jumbotron{
+    opacity: 1.0;
 }
 input{
     border-radius: 3px;
@@ -29,19 +30,13 @@ input{
 
 #tb{
     color: #cc6512;
-    font-family: 'Pangolin', cursive;
     font-size: 30px;
 
 }
 
 body{
-    /*background-image: url("https://desiringlife.files.wordpress.com/2011/06/books-movies-music.jpg");
-    background-image: url("https://cdn.patchcdn.com/users/345299/stock/T800x600/2014125498b0d42bbc3.png");
-    background-image: url("http://kazuya-akimoto.com/2005/2005imges/4297_triangular_debris.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;*/
-    background-color: #100c38;
-
-
+        background-image: url("http://eskipaper.com/images/tumblr-backgrounds-9.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        font-family: 'Bree Serif', serif;
 }
