@@ -8,7 +8,7 @@ $(document).ready(function(){
         type: 'POST',
         crossDomain: true,
         dataType: 'json',
-        url: 'http://data.hasura/v1/query/',
+        url: 'http://data.c100.hasura.me/v1/query/',
         success: function(data){
             var n = data.length;
             var i = 0;
@@ -58,7 +58,7 @@ $(document).ready(function(){
         type: 'POST',
         crossDomain: true,
         dataType: 'json',
-        url: 'http://data.hasura/v1/query/',
+        url: 'http://data.c100.hasura.me/v1/query/',
         success: function(data){
             var n = data.length;
             var i = 0;
@@ -112,7 +112,7 @@ $(document).ready(function(){
             type: 'POST',
             crossDomain: true,
             dataType: 'json',
-            url: 'http://auth.hasura/user/logout',
+            url: 'http://auth.c100.hasura.me/user/logout',
             success: function (data) {
                 //alert("You have been logged out! ");
                 localStorage.setItem("Logged In", "false");
