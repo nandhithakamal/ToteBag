@@ -59,11 +59,14 @@
         				</div>
         				<div class = "form-group">
         					<label for = "bquality" class = "control-label col-md-2">Quality: </label>
-                            <div class = "col-md-2 text-left">
+                            <div class = "col-md-3 text-left">
         						<label><input type = "radio" name = "bquality" value = "Paperback">Paperback</label>
                             </div>
                             <div class = "col-md-3 text-left">
                                 <label> <input type = "radio" name = "bquality" value = "Hardcover">Hardcover</label>
+        					</div>
+                            <div class = "col-md-3 text-left">
+                                <label> <input type = "radio" name = "bquality" value = "Digital Copy">Digital Copy</label>
         					</div>
                             <div class = "col-md-5"></div>
         				</div>
@@ -170,6 +173,9 @@
 
         <script src="/js/actions.js"></script>
         <style>
+            body{
+                font-family: 'Bree Serif', serif;
+            }
             #shareBox{
                 margin-top: 70px;
             }
@@ -203,21 +209,17 @@
                 visibility: hidden;
             }
             #shareResult{
-                font-family: 'Bree Serif', serif;
                 font-size: 20px;
             }
             .changeFont{
-                font-family: 'Bree Serif', serif;
                 font-size: 40px;
             }
             #currResource{
-                font-family: 'Bree Serif', serif;
                 font-size: 30px;
                 cursor: hand;
                 cursor: pointer;
             }
             .shareError{
-                font-family: 'Bree Serif', serif;
                 font-size: 15px;
             }
             body{
