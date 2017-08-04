@@ -17,7 +17,7 @@ $(document).ready(function () {
                 type: 'POST',
                 crossDomain: true,
                 dataType: 'json',
-                url: 'http://data.c100.hasura.me/v1/query/',
+                url: 'http://data.hasura/v1/query/',
                 success: function (data) {
                     displayResources(data);
                 },
@@ -95,7 +95,7 @@ $(document).ready(function () {
                 type: 'POST',
                 crossDomain: true,
                 dataType: 'json',
-                url: 'http://data.c100.hasura.me/v1/query/',
+                url: 'http://data.hasura/v1/query/',
                 success: function(){
                     alert("Request successful!");
 
@@ -141,7 +141,7 @@ $(document).ready(function () {
             type: 'POST',
             crossDomain: true,
             dataType: 'json',
-            url: 'http://auth.c100.hasura.me/user/logout',
+            url: 'http://auth.hasura/user/logout',
             success: function (data) {
                 //alert("You have been logged out! ");
                 localStorage.setItem("loggedIn", "false");
@@ -271,7 +271,7 @@ $(document).ready(function () {
                 type: 'POST',
                 crossDomain: true,
                 dataType: 'json',
-                url: 'http://data.c100.hasura.me/v1/query/',
+                url: 'http://data.hasura/v1/query/',
                 success: function (data) {
                     $("#shareResult").html("Sharing is caring. Good job! :D");
                 },
@@ -343,7 +343,7 @@ $(document).ready(function () {
                 type: 'POST',
                 crossDomain: true,
                 dataType: 'json',
-                url: 'http://data.c100.hasura.me/v1/query/',
+                url: 'http://data.hasura/v1/query/',
                 success: function (data) {
                     $("#shareResult").html("Sharing is caring. Good job! :D");
                 },
@@ -414,7 +414,7 @@ $(document).ready(function () {
                 type: 'POST',
                 crossDomain: true,
                 dataType: 'json',
-                url: 'http://data.c100.hasura.me/v1/query/',
+                url: 'http://data.hasura/v1/query/',
                 success: function (data) {
                     $("#shareResult").html("Sharing is caring. Good job! :D");
                 },

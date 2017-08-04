@@ -51,7 +51,7 @@ $("#registerButton").on("click", function(){
             type: 'POST',
             crossDomain: true,
             dataType: 'json',
-            url: 'http://auth.c100.hasura.me/signup',
+            url: 'http://auth.hasura/signup',
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -95,7 +95,7 @@ function updateUserTable(hasuraID, username){
         type: 'POST',
         crossDomain: true,
         dataType: 'json',
-        url: 'http://data.c100.hasura.me/v1/query',
+        url: 'http://data.hasura/v1/query',
         headers: {
             'Content-Type': 'application/json',
             'Authorization': "Bearer " + authToken

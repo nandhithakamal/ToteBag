@@ -13,7 +13,7 @@ $("#loginButton").on('click', function(){
             type: 'POST',
             crossDomain: true,
             dataType: 'json',
-            url: 'http://auth.c100.hasura.me/login',
+            url: 'http://auth.hasura/login',
             headers: {
                 'Content-Type': 'application/json',
             },
