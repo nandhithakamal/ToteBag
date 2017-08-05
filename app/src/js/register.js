@@ -1,6 +1,15 @@
 var password;
 var cpassword;
 
+var url;
+if(window.location.host === "app.c100.hasura.me" || window.location.host === "localhost:8080")
+{
+    url = "c100.hasura.me";
+}
+else if(window.location.host === "app.nandhithakamal.hasura.me"){
+    url = "nandhithakamal.hasura.me";
+}
+
 var errorScreen = `<h2 class = "text-center">
     Oops! Something went wrong and we don't know what. :(
     </h2>
@@ -8,7 +17,7 @@ var errorScreen = `<h2 class = "text-center">
     <style>
       @import url('https://fonts.googleapis.com/css?family=Saira');
       body{
-          background-image: url(""); 
+          background-image: url("");
           font-family: 'Saira', sans-serif;
       }
     </style>`;
@@ -57,13 +66,13 @@ $("#registerButton").on("click", function(){
     }else{
         $("#phoneError").html("Enter a valid 10 digit phone number");
     }
-    console.log(checks);
+
     if(checks == 5){
         $.ajax({
             type: 'POST',
             crossDomain: true,
             dataType: 'json',
-            url: 'http://auth.nandhithakamal.hasura.me/signup',
+            url: 'http://auth.' + url + 'signup',
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -105,7 +114,7 @@ function updateUserTable(hasuraID, username){
         type: 'POST',
         crossDomain: true,
         dataType: 'json',
-        url: 'http://data.nandhithakamal.hasura.me/v1/query',
+        url: 'http://data.' + url + '/v1/query',
         headers: {
             'Content-Type': 'application/json',
             'Authorization': "Bearer " + authToken
@@ -135,25 +144,3 @@ function updateUserTable(hasuraID, username){
 
     });
 }
-
-/*$("#password").keypress(function(){
-    password = $("#password").val();
-    console.log(password);
-    if(password.length < 7){
-        $("#passwordError").html("Password should be at least 8 characters long");
-    }
-    else{
-        $("#passwordError").html("");
-    }
-});
-
-$("#cpassword").keypress(function(){
-    cpassword = $("#cpassword").val();
-    console.log(cpassword);
-    if(cpassword === password){
-        $("#cpasswordError").html("");
-    }
-    else{
-        $("#cpasswordError").html("Passwords don't match");
-    }
-});*/

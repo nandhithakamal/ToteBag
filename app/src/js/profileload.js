@@ -3,6 +3,15 @@ $(document).ready(function(){
     var hasuraID = localStorage.getItem("hasuraID");
     var username = localStorage.getItem("username");
 
+    var url;
+    if(window.location.host === "app.c100.hasura.me" || window.location.host === "localhost:8080")
+    {
+        url = "c100.hasura.me";
+    }
+    else if(window.location.host === "app.nandhithakamal.hasura.me"){
+        url = "nandhithakamal.hasura.me";
+    }
+
     var errorScreen = `<h2 class = "text-center">
         Oops! Something went wrong and we don't know what. :(
     </h2>
@@ -19,7 +28,7 @@ $(document).ready(function(){
         type: 'POST',
         crossDomain: true,
         dataType: 'json',
-        url: 'http://data.nandhithakamal.hasura.me/v1/query/',
+        url: 'http://data.' + url + '/v1/query',
         success: function(data){
             var n = data.length;
             var i = 0;
@@ -67,7 +76,7 @@ $(document).ready(function(){
         type: 'POST',
         crossDomain: true,
         dataType: 'json',
-        url: 'http://data.nandhithakamal.hasura.me/v1/query/',
+        url: 'http://data.' + url + '/v1/query',
         success: function(data){
             var n = data.length;
             var i = 0;
@@ -119,9 +128,8 @@ $(document).ready(function(){
             type: 'POST',
             crossDomain: true,
             dataType: 'json',
-            url: 'http://auth.nandhithakamal.hasura.me/user/logout',
+            url: 'http://data.' + url + '/user/logout',
             success: function (data) {
-                //alert("You have been logged out! ");
                 localStorage.setItem("Logged In", "false");
                 localStorage.removeItem("hasuraID");
                 localStorage.removeItem("authToken");

@@ -3,6 +3,15 @@ $("#loginButton").on('click', function(){
     var password = $("#password").val();
     var hasuraID, authToken;
 
+    var url;
+    if(window.location.host === "app.c100.hasura.me" || window.location.host === "localhost:8080")
+    {
+        url = "c100.hasura.me";
+    }
+    else if(window.location.host === "app.nandhithakamal.hasura.me"){
+        url = "nandhithakamal.hasura.me";
+    }
+
     var errorScreen = `<h2 class = "text-center">
         Oops! Something went wrong and we don't know what. :(
     </h2>
@@ -10,7 +19,7 @@ $("#loginButton").on('click', function(){
     <style>
       @import url('https://fonts.googleapis.com/css?family=Saira');
       body{
-          background-image: url(""); 
+          background-image: url("");
           font-family: 'Saira', sans-serif;
       }
     </style>`;
@@ -27,7 +36,7 @@ $("#loginButton").on('click', function(){
             type: 'POST',
             crossDomain: true,
             dataType: 'json',
-            url: 'http://auth.nandhithakamal.hasura.me/login',
+            url: 'http://auth.' + url + '/login',
             headers: {
                 'Content-Type': 'application/json',
             },

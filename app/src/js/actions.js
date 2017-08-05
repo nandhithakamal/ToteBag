@@ -11,36 +11,38 @@ $(document).ready(function () {
     </style>`;
     var token = localStorage.getItem("authToken");
     var hasuraID = localStorage.getItem("hasuraID");
-
-    //token =  'Bearer ' + token;
-
-    console.log(token);
-    console.log(typeof token);
-    console.log(hasuraID);
-    console.log(typeof hasuraID);
+    var url;
+    if(window.location.host === "app.c100.hasura.me" || window.location.host === "localhost:8080")
+    {
+        url = "c100.hasura.me";
+    }
+    else if(window.location.host === "app.nandhithakamal.hasura.me"){
+        url = "nandhithakamal.hasura.me";
+    }
 
     function fetchResources(){
         var key = $("#searchText").val();
-
+        $("#searchError").html("");
         if (key.trim().length > 0) {
             $.ajax({
                 type: 'POST',
                 crossDomain: true,
                 dataType: 'json',
-                url: 'http://data.nandhithakamal.hasura.me/v1/query/',
+                url: 'http://data.' + url + '/v1/query',
                 success: function (data) {
                     if(data.length > 0){
                         displayResources(data);
                         $("#resultEnd").html("That's all for now!");
+                        $("#resultEnd").css("color", "#dcdee2");
                     }else {
+                        $("#searchResults").html("");
                         $("#resultEnd").html("Sorry! We couldn't find any resources that matched your query");
-                        $("#resultEnd").css("color: red");
+                        $("#resultEnd").css("color", "red");
                     }
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     if(jqXHR.status == 401){
                         window.location.href = "/";
-                        console.log("Invalid user");
                     }
                     else{
                         $("body").html(errorScreen);
@@ -76,10 +78,12 @@ $(document).ready(function () {
             });
 
         }else{
-                $("#searchError").html("Please enter a search text");
+            $("#searchResults").html("");
+            $("#searchError").html("Please enter a search text");
+            $("#resultEnd").html("");
         }
     }
-    //alert("You need to enter a search text");
+
 
     function displayResources(data){
         $("#searchResults").html("");
@@ -100,7 +104,6 @@ $(document).ready(function () {
 
     function requestResource(ownerID, resourceID){
         //var resourceID = $(this).children("span.resourceID").val();
-        //console.log(resourceID);
         if(ownerID == hasuraID){
             alert("You own it. ");
         }
@@ -109,7 +112,7 @@ $(document).ready(function () {
                 type: 'POST',
                 crossDomain: true,
                 dataType: 'json',
-                url: 'http://data.nandhithakamal.hasura.me/v1/query/',
+                url: 'http://data.' + url + '/v1/query',
                 success: function(){
                     alert("Request successful!");
 
@@ -117,7 +120,6 @@ $(document).ready(function () {
                 error: function(jqXHR, textStatus, errorThrown) {
                     if(jqXHR.status == 401){
                         window.location.href = "/";
-                        console.log("Invalid user");
                     }
                     else{
                         $("body").html(errorScreen);
@@ -153,9 +155,8 @@ $(document).ready(function () {
             type: 'POST',
             crossDomain: true,
             dataType: 'json',
-            url: 'http://auth.nandhithakamal.hasura.me/user/logout',
+            url: 'http://auth.' + url + '/user/logout',
             success: function (data) {
-                //alert("You have been logged out! ");
                 localStorage.setItem("loggedIn", "false");
                 localStorage.removeItem("hasuraID");
                 localStorage.removeItem("authToken");
@@ -166,7 +167,6 @@ $(document).ready(function () {
             error: function (jqXHR, textStatus, errorThrown) {
                 if(jqXHR.status == 401){
                     window.location.href = "/";
-                    console.log("Logged out already");
                 }
                 else{
                     $("body").html(errorScreen);
@@ -195,39 +195,22 @@ $(document).ready(function () {
         $(this).css("background-color", "#edd09c");
         //('.resourceInfo').slideUp("fast");
         $(this).children("div.resourceInfo").slideToggle("fast");
-        //alert("You are attempting to request a resource. ");
     });
+
     $(document).on('click', '.requestResource', function(){
         $('.requestResource').html("Request from ");
         //$(this).html("Requesting from... ");
         var ownerID = $(this).next().next().html();
         var resourceID = $(this).next().next().next().html();
-        console.log("ownerID " + ownerID + " " + typeof ownerID);
-        console.log("resourceID " + resourceID + " " + typeof resourceID);
-
         requestResource(ownerID, resourceID);
     });
+
     $(document).on('click', '.owner', function(){
         $('.requestResource').html("Request from ");
         //$(this).prev().html("Requesting from... ");
         var ownerID = parseInt($(this).next().html());
         var resourceID = parseInt($(this).next().next().html());
-        console.log("ownerID " + ownerID + " " + typeof ownerID);
-        console.log("resourceID " + resourceID + " " + typeof resourceID);
-
         requestResource(ownerID, resourceID);
-    })
-
-    $("#cat").change(function(){
-        alert("Trying to change");
-        /*var cat = jQuery("#category option:selected").val();
-        if(cat == "book"){
-            $("#upload").html("Add a book");
-
-        }
-        else if (cat == "movie") {
-            $("#upload").html("Add a movie");
-        }*/
     });
 
     $(".caret").on('click', function(){
@@ -270,7 +253,6 @@ $(document).ready(function () {
         var author = $("#author").val();
         var genre = $("#bgenre").val();
         var quality = $("input[name='bquality']:checked").val();
-        //console.log("Quality" + quality);
         var category = $("#currResource").html();
 
         if(title === "" || author === ""){
@@ -281,14 +263,13 @@ $(document).ready(function () {
                 type: 'POST',
                 crossDomain: true,
                 dataType: 'json',
-                url: 'http://data.nandhithakamal.hasura.me/v1/query/',
+                url: 'http://data.' + url + '/v1/query',
                 success: function (data) {
                     $("#shareResult").html("Sharing is caring. Good job! :D");
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     if(jqXHR.status == 401){
                         window.location.href = "/";
-                        console.log("Invalid user");
                     }
                     else{
                         $("body").html(errorScreen);
@@ -339,7 +320,6 @@ $(document).ready(function () {
         var artist = $("#artist").val();
         var genre = $("#mgenre").val();
         var bitrate = $("input[name='bitrate']:checked").val();
-        console.log(bitrate);
         var category = $("#currResource").html();
 
         if(title === "" || artist === ""){
@@ -351,14 +331,13 @@ $(document).ready(function () {
                 type: 'POST',
                 crossDomain: true,
                 dataType: 'json',
-                url: 'http://data.nandhithakamal.hasura.me/v1/query/',
+                url: 'http://data.' + url + '/v1/query',
                 success: function (data) {
                     $("#shareResult").html("Sharing is caring. Good job! :D");
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     if(jqXHR.status == 401){
                         window.location.href = "/";
-                        console.log("Invalid user");
                     }
                     else{
                         $("body").html(errorScreen);
@@ -409,7 +388,6 @@ $(document).ready(function () {
         var director = $("#director").val();
         var genre = $("#movgenre").val();
         var quality = $("input[name='movquality']:checked").val();
-        console.log(quality);
         var category = $("#currResource").html();
 
         if(title === "" || director === ""){
@@ -420,13 +398,12 @@ $(document).ready(function () {
                 type: 'POST',
                 crossDomain: true,
                 dataType: 'json',
-                url: 'http://data.nandhithakamal.hasura.me/v1/query/',
+                url: 'http://data.' + url + '/v1/query',
                 success: function (data) {
                     $("#shareResult").html("Sharing is caring. Good job! :D");
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     if(jqXHR.status == 401){
-                        console.log("Invalid user");
                         window.location.href = "/";
                     }
                     else{
