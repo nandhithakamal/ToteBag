@@ -2,6 +2,20 @@ $("#loginButton").on('click', function(){
     var username = $("#username").val();
     var password = $("#password").val();
     var hasuraID, authToken;
+
+    var errorScreen = `<h2 class = "text-center">
+        Oops! Something went wrong and we don't know what. :(
+    </h2>
+    <hr>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Saira');
+      body{
+          background-image: url(""); 
+          font-family: 'Saira', sans-serif;
+      }
+    </style>`;
+
+
     if(username === ""){
         $("#errorMessage").html("Enter your username");
     }
@@ -37,6 +51,9 @@ $("#loginButton").on('click', function(){
             error: function(jqXHR, textStatus, errorThrown) {
                 if(jqXHR.status == 403)
                     $("#errorMessage").html("Invalid username / password");
+                else{
+                    $("body").html(errorScreen);
+                }
             },
             processData: false
 

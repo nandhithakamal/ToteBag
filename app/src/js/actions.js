@@ -1,4 +1,14 @@
 $(document).ready(function () {
+    var errorScreen = `<h2 class = "text-center">
+        Oops! Something went wrong and we don't know what. :(
+    </h2>
+    <hr>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Saira');
+      body{
+          font-family: 'Saira', sans-serif;
+      }
+    </style>`;
     var token = localStorage.getItem("authToken");
     var hasuraID = localStorage.getItem("hasuraID");
 
@@ -19,7 +29,13 @@ $(document).ready(function () {
                 dataType: 'json',
                 url: 'http://data.nandhithakamal.hasura.me/v1/query/',
                 success: function (data) {
-                    displayResources(data);
+                    if(data.length > 0){
+                        displayResources(data);
+                        $("#resultEnd").html("That's all for now!");
+                    }else {
+                        $("#resultEnd").html("Sorry! We couldn't find any resources that matched your query");
+                        $("#resultEnd").css("color: red");
+                    }
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     if(jqXHR.status == 401){
@@ -27,9 +43,7 @@ $(document).ready(function () {
                         console.log("Invalid user");
                     }
                     else{
-                        alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
-                            "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
-                            + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
+                        $("body").html(errorScreen);
                     }
                 },
                 headers: {
@@ -62,7 +76,7 @@ $(document).ready(function () {
             });
 
         }else{
-                alert("You need to enter a search text");
+                $("#searchError").html("Please enter a search text");
         }
     }
     //alert("You need to enter a search text");
@@ -106,9 +120,7 @@ $(document).ready(function () {
                         console.log("Invalid user");
                     }
                     else{
-                        alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
-                            "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
-                            + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
+                        $("body").html(errorScreen);
                     }
                 },
                 headers: {
@@ -157,9 +169,7 @@ $(document).ready(function () {
                     console.log("Logged out already");
                 }
                 else{
-                    alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
-                        "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
-                        + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
+                    $("body").html(errorScreen);
                 }
             },
             contentType: 'application/json',
@@ -281,9 +291,7 @@ $(document).ready(function () {
                         console.log("Invalid user");
                     }
                     else{
-                        alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
-                            "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
-                            + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
+                        $("body").html(errorScreen);
                     }
                 },
                 headers: {
@@ -353,9 +361,7 @@ $(document).ready(function () {
                         console.log("Invalid user");
                     }
                     else{
-                        alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
-                            "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
-                            + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
+                        $("body").html(errorScreen);
                     }
                 },
                 headers: {
@@ -424,9 +430,7 @@ $(document).ready(function () {
                         window.location.href = "/";
                     }
                     else{
-                        alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
-                            "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
-                            + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
+                        $("body").html(errorScreen);
                     }
                 },
                 headers: {

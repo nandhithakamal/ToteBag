@@ -3,6 +3,17 @@ $(document).ready(function(){
     var hasuraID = localStorage.getItem("hasuraID");
     var username = localStorage.getItem("username");
 
+    var errorScreen = `<h2 class = "text-center">
+        Oops! Something went wrong and we don't know what. :(
+    </h2>
+    <hr>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Saira');
+      body{
+          font-family: 'Saira', sans-serif;
+      }
+    </style>`;
+
     $("#username").html(username);
     $.ajax({
         type: 'POST',
@@ -22,9 +33,7 @@ $(document).ready(function(){
                 window.location.href = "/";
             }
             else{
-                alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
-                    "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
-                    + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
+                $("body").html(errorScreen);
             }
         },
         headers: {
@@ -74,9 +83,7 @@ $(document).ready(function(){
                 window.location.href = "/";
             }
             else{
-                alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
-                    "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
-                    + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
+                $("body").html(errorScreen);
             }
         },
         headers: {
@@ -127,9 +134,7 @@ $(document).ready(function(){
                     window.location.href = "/";
                 }
                 else{
-                    alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
-                        "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
-                        + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
+                    $("body").html(errorScreen);
                 }
             },
             contentType: 'application/json',

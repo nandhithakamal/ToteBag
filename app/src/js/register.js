@@ -1,6 +1,18 @@
 var password;
 var cpassword;
 
+var errorScreen = `<h2 class = "text-center">
+    Oops! Something went wrong and we don't know what. :(
+    </h2>
+    <hr>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Saira');
+      body{
+          background-image: url(""); 
+          font-family: 'Saira', sans-serif;
+      }
+    </style>`;
+
 $("#registerButton").on("click", function(){
     var username = $("#username").val();
     var password = $("#password").val();
@@ -79,9 +91,7 @@ $("#registerButton").on("click", function(){
                     $("#errorMessage").html("Username exists. Choose a different username");
                 }
                 else{
-                    alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
-                        "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
-                        + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
+                    $("body").html(errorScreen);
                 }
             },
             processData: false
@@ -119,9 +129,7 @@ function updateUserTable(hasuraID, username){
             window.location.href = "/search";
         },
         error: function(jqXHR, textStatus, errorThrown) {
-            alert("onreadystatechange: " + jqXHR.onreadystatechange + "\nready" +
-                "State: " + jqXHR.readyState + "\nresponseText: " + jqXHR.responseText + "\nresponseXML: " + jqXHR.responseXML + "\nstatus: "
-                + jqXHR.status + "\nstatusText: " + jqXHR.statusText + "\n\ntextStatus: " + textStatus + "\n\nerrorThrown: " + errorThrown);
+            $("body").html(errorScreen);
         },
         processData: false
 

@@ -29,8 +29,10 @@
                             <button class = "btn btn-primary" id = "searchButton"><i class = "fa fa-search"></i></button>
                         </div>
                     </div>
+                    <div id = "searchError" style = "color: red" class = "text-center"></div>
                     <div id = "searchResults" class = "pre-scrollable">
                     </div>
+                    <div id = "resultEnd" class = "text-center"></div>
 
               </div>
               <div class = "col-sm-2 col-md-2 col-lg-2"></div>
@@ -69,6 +71,9 @@
           }
           .well{
               background-color: white;
+          }
+          #resultEnd{
+              font-size: 20px;
           }
 
       </style>
