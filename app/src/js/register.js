@@ -51,7 +51,7 @@ $("#registerButton").on("click", function(){
             type: 'POST',
             crossDomain: true,
             dataType: 'json',
-            url: 'http://auth.hasura/signup',
+            url: 'http://auth.nandhithakamal.hasura.me/signup',
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -95,7 +95,7 @@ function updateUserTable(hasuraID, username){
         type: 'POST',
         crossDomain: true,
         dataType: 'json',
-        url: 'http://data.hasura/v1/query',
+        url: 'http://data.nandhithakamal.hasura.me/v1/query',
         headers: {
             'Content-Type': 'application/json',
             'Authorization': "Bearer " + authToken
