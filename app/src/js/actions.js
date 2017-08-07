@@ -98,11 +98,11 @@ $(document).ready(function () {
             var genre = data[i].genre;
 
             $("#searchResults").append("<div class = 'resource well'>" + (i+1).toString() + ".  " + cat + "<br>" + title +
-                " - " + author + "<br>" + "<div class = 'resourceInfo'>" + quality + ", " + genre + "<br>" + "<span class = 'requestResource'> Request from " + "</span>" + "<span class = 'owner'>" +  owner +  "</span>" + "<span class = 'ownerID'>" +  ownerID +  "</span>" + "<span class = 'resourceID'>" + resourceID +  "</span>" + "</div>" + "</div>");
+                " - " + author + "<br>" + "<div class = 'resourceInfo'>" + quality + ", " + genre + "<br>" + "<span class = 'requestResource' id = 'r" +  i + "'>" + "Request from " + "</span>" + "<span class = 'owner' id = 'o" + i + "'>"+  owner +  "</span>" + "<span class = 'ownerID'>" +  ownerID +  "</span>" + "<span class = 'resourceID'>" + resourceID +  "</span>" + "</div>" + "</div>");
         }
     }
 
-    function requestResource(ownerID, resourceID){
+    function requestResource(ownerID, resourceID, id){
         //var resourceID = $(this).children("span.resourceID").val();
         if(ownerID == hasuraID){
             alert("You own it. ");
@@ -114,15 +114,20 @@ $(document).ready(function () {
                 dataType: 'json',
                 url: 'http://data.' + url + '/v1/query',
                 success: function(){
-                    alert("Request successful!");
+                    console.log("Request successful!");
+                    $("#"+id).removeClass('requestResource');
+                    $("#"+id).next().removeClass('owner');
+                    $("#"+id).html("Requested from ");
+                    $("#"+id).off('click');
 
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
                     if(jqXHR.status == 401){
                         window.location.href = "/";
+                        return 1;
                     }
                     else{
-                        $("body").html(errorScreen);
+                        return 0;
                     }
                 },
                 headers: {
@@ -198,19 +203,27 @@ $(document).ready(function () {
     });
 
     $(document).on('click', '.requestResource', function(){
-        $('.requestResource').html("Request from ");
-        //$(this).html("Requesting from... ");
+        var id = $(this).attr('id');
+        $(this).children("div.requestResource").html("Requesting from ");
+        console.log("You clicked " + id);        //$(this).html("Requesting from... ");
         var ownerID = $(this).next().next().html();
         var resourceID = $(this).next().next().next().html();
-        requestResource(ownerID, resourceID);
+        requestResource(ownerID, resourceID, id);
+        //console.log(requestStatus);
+        /*if (requestStatus == 2){
+            $(this).children("div.requestResource").html("Requested from ");
+        }else if(requestStatus == 0){
+            $("body").html(errorScreen);
+        }*/
     });
 
     $(document).on('click', '.owner', function(){
-        $('.requestResource').html("Request from ");
-        //$(this).prev().html("Requesting from... ");
+        var id = $(this).prev().attr('id');
+        $(this).children("div.requestResource").html("Requesting from ");
+        console.log("You clicked " + id);
         var ownerID = parseInt($(this).next().html());
         var resourceID = parseInt($(this).next().next().html());
-        requestResource(ownerID, resourceID);
+        requestResource(ownerID, resourceID, id);
     });
 
     $(".caret").on('click', function(){
