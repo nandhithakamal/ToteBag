@@ -124,10 +124,9 @@ $(document).ready(function () {
                 error: function(jqXHR, textStatus, errorThrown) {
                     if(jqXHR.status == 401){
                         window.location.href = "/";
-                        return 1;
                     }
                     else{
-                        return 0;
+                        $("body").html(errorScreen);
                     }
                 },
                 headers: {

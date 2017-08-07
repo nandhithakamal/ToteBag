@@ -22,8 +22,6 @@ app.get('/', function (req, res) {
     //noinspection JSAnnotator
     //if(localStorage.getItem('token'))
     var cookie = req.cookies['authToken'];
-    console.log(cookie);
-    console.log(typeof cookie);
     if(cookie === undefined || cookie === "false"){
         res.sendFile('html/landingpage.html', {root});
     }
