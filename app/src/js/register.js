@@ -105,7 +105,7 @@ $("#registerButton").on("click", function(){
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 if(jqXHR.status == 409){
-                    $("#errorMessage").html("Username exists. Choose a different username");
+                    $("#errorMessage").html("Username / Email ID / Phone is already in use. Please choose different credentials");
                 }
                 else{
                     $("body").html(errorScreen);
