@@ -78,7 +78,7 @@ $("#registerButton").on("click", function(){
             type: 'POST',
             crossDomain: true,
             dataType: 'json',
-            url: protocol + '://auth' + url + 'signup',
+            url: protocol + '://auth' + url + '/signup',
             headers: {
                 'Content-Type': 'application/json',
             },
