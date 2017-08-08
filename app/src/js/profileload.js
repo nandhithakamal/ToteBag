@@ -4,12 +4,18 @@ $(document).ready(function(){
     var username = localStorage.getItem("username");
 
     var url;
+    var protocol = "http";
+
     if(window.location.host === "app.c100.hasura.me" || window.location.host === "localhost:8080")
     {
         url = "c100.hasura.me";
     }
     else if(window.location.host === "app.nandhithakamal.hasura.me"){
         url = "nandhithakamal.hasura.me";
+    }
+    else if(window.location.host === "totebag.gristmill14.hasura-app.io"){
+        protocol = "https";
+        url = "gristmill14.hasura-app.io";
     }
 
     var errorScreen = `<h2 class = "text-center">
@@ -28,7 +34,7 @@ $(document).ready(function(){
         type: 'POST',
         crossDomain: true,
         dataType: 'json',
-        url: 'http://data.' + url + '/v1/query',
+        url: protocol + '://data.' + url + '/v1/query',
         success: function(data){
             var n = data.length;
             var i = 0;
@@ -76,7 +82,7 @@ $(document).ready(function(){
         type: 'POST',
         crossDomain: true,
         dataType: 'json',
-        url: 'http://data.' + url + '/v1/query',
+        url: protocol + '://auth' + url + '/v1/query',
         success: function(data){
             var n = data.length;
             var i = 0;
@@ -128,7 +134,7 @@ $(document).ready(function(){
             type: 'POST',
             crossDomain: true,
             dataType: 'json',
-            url: 'http://data.' + url + '/user/logout',
+            url: protocol + '://data.' + url + '/user/logout',
             success: function (data) {
                 localStorage.setItem("Logged In", "false");
                 localStorage.removeItem("hasuraID");

@@ -12,6 +12,7 @@ $(document).ready(function () {
     var token = localStorage.getItem("authToken");
     var hasuraID = localStorage.getItem("hasuraID");
     var url;
+    var protocol = 'http';
     if(window.location.host === "app.c100.hasura.me" || window.location.host === "localhost:8080")
     {
         url = "c100.hasura.me";
@@ -21,6 +22,7 @@ $(document).ready(function () {
     }
     else if(window.location.host === "totebag.gristmill14.hasura-app.io")
     {
+        proctocol = "https";
         url = "gristmill14.hasura-app.io";
     }
 
@@ -32,7 +34,7 @@ $(document).ready(function () {
                 type: 'POST',
                 crossDomain: true,
                 dataType: 'json',
-                url: 'http://data.' + url + '/v1/query',
+                url: protocol + '://data.' + url + '/v1/query',
                 success: function (data) {
                     if(data.length > 0){
                         displayResources(data);
@@ -116,7 +118,7 @@ $(document).ready(function () {
                 type: 'POST',
                 crossDomain: true,
                 dataType: 'json',
-                url: 'http://data.' + url + '/v1/query',
+                url: protocol + '://data.' + url + '/v1/query',
                 success: function(){
                     console.log("Request successful!");
                     $("#"+id).removeClass('requestResource');
@@ -163,7 +165,7 @@ $(document).ready(function () {
             type: 'POST',
             crossDomain: true,
             dataType: 'json',
-            url: 'http://auth.' + url + '/user/logout',
+            url: protocol + '://auth.' + url + '/user/logout',
             success: function (data) {
                 localStorage.setItem("loggedIn", "false");
                 localStorage.removeItem("hasuraID");
@@ -279,7 +281,7 @@ $(document).ready(function () {
                 type: 'POST',
                 crossDomain: true,
                 dataType: 'json',
-                url: 'http://data.' + url + '/v1/query',
+                url: protocol + '://data.' + url + '/v1/query',
                 success: function (data) {
                     $("#shareResult").html("Sharing is caring. Good job! :D");
                 },
@@ -347,7 +349,7 @@ $(document).ready(function () {
                 type: 'POST',
                 crossDomain: true,
                 dataType: 'json',
-                url: 'http://data.' + url + '/v1/query',
+                url: protocol + '://data.' + url + '/v1/query',
                 success: function (data) {
                     $("#shareResult").html("Sharing is caring. Good job! :D");
                 },
@@ -414,7 +416,7 @@ $(document).ready(function () {
                 type: 'POST',
                 crossDomain: true,
                 dataType: 'json',
-                url: 'http://data.' + url + '/v1/query',
+                url: protocol + '://data.' + url + '/v1/query',
                 success: function (data) {
                     $("#shareResult").html("Sharing is caring. Good job! :D");
                 },

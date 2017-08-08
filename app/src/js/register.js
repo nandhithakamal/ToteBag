@@ -2,12 +2,18 @@ var password;
 var cpassword;
 
 var url;
+var protocol = "http";
+
 if(window.location.host === "app.c100.hasura.me" || window.location.host === "localhost:8080")
 {
     url = "c100.hasura.me";
 }
 else if(window.location.host === "app.nandhithakamal.hasura.me"){
     url = "nandhithakamal.hasura.me";
+}
+else if(window.location.host === "totebag.gristmill14.hasura-app.io"){
+    protocol = "https";
+    url = "gristmill14.hasura-app.io";
 }
 
 var errorScreen = `<h2 class = "text-center">
@@ -72,7 +78,7 @@ $("#registerButton").on("click", function(){
             type: 'POST',
             crossDomain: true,
             dataType: 'json',
-            url: 'http://auth.' + url + 'signup',
+            url: protocol + '://auth' + url + 'signup',
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -114,7 +120,7 @@ function updateUserTable(hasuraID, username){
         type: 'POST',
         crossDomain: true,
         dataType: 'json',
-        url: 'http://data.' + url + '/v1/query',
+        url: protocl + '://data' + url + '/v1/query',
         headers: {
             'Content-Type': 'application/json',
             'Authorization': "Bearer " + authToken

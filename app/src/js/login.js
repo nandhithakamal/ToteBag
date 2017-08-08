@@ -4,12 +4,18 @@ $("#loginButton").on('click', function(){
     var hasuraID, authToken;
 
     var url;
+    var protocol = "http";
+    
     if(window.location.host === "app.c100.hasura.me" || window.location.host === "localhost:8080")
     {
         url = "c100.hasura.me";
     }
     else if(window.location.host === "app.nandhithakamal.hasura.me"){
         url = "nandhithakamal.hasura.me";
+    }
+    else if(window.location.host === "totebag.gristmill14.hasura-app.io"){
+        protocol = "https";
+        url = "gristmill14.hasura-app.io";
     }
 
     var errorScreen = `<h2 class = "text-center">
@@ -36,7 +42,7 @@ $("#loginButton").on('click', function(){
             type: 'POST',
             crossDomain: true,
             dataType: 'json',
-            url: 'http://auth.' + url + '/login',
+            url: protocol + '://auth.' + url + '/login',
             headers: {
                 'Content-Type': 'application/json',
             },
