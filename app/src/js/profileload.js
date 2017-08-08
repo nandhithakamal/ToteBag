@@ -134,7 +134,7 @@ $(document).ready(function(){
             type: 'POST',
             crossDomain: true,
             dataType: 'json',
-            url: protocol + '://data.' + url + '/user/logout',
+            url: protocol + '://auth.' + url + '/user/logout',
             success: function (data) {
                 localStorage.setItem("Logged In", "false");
                 localStorage.removeItem("hasuraID");

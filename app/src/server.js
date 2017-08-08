@@ -39,7 +39,7 @@ app.get('/login', function (req, res) {
         res.sendFile('html/login.html', {root});
     }
     else{
-        res.redirect("/about");
+        res.redirect("/search");
     }
 
 });

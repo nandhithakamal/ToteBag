@@ -5,7 +5,7 @@ $("#loginButton").on('click', function(){
 
     var url;
     var protocol = "http";
-    
+
     if(window.location.host === "app.c100.hasura.me" || window.location.host === "localhost:8080")
     {
         url = "c100.hasura.me";
@@ -61,7 +61,7 @@ $("#loginButton").on('click', function(){
                 localStorage.setItem("loggedIn", true);
                 localStorage.setItem("username", username);
                 document.cookie = "authToken = " + authToken + "; expires = " + date;
-                window.location.href = "/search";
+                window.location.href = "/about";
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 if(jqXHR.status == 403)
