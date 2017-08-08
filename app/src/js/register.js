@@ -66,7 +66,7 @@ $("#registerButton").on("click", function(){
         checks++;
     }
 
-    var phonePattern = /[0-9]{10}/
+    var phonePattern = /[789][0-9]{9}/
     if(phonePattern.test(phone)){
         checks++;
     }else{
