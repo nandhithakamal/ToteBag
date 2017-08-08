@@ -283,6 +283,10 @@ $(document).ready(function () {
                 dataType: 'json',
                 url: protocol + '://data.' + url + '/v1/query',
                 success: function (data) {
+                    $("#btitle").val("");
+                    $("#author").val("");
+                    $("#bgenre").val("");
+                    $("input[name='bquality']").prop('checked', false);
                     $("#shareResult").html("Sharing is caring. Good job! :D");
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
@@ -351,6 +355,10 @@ $(document).ready(function () {
                 dataType: 'json',
                 url: protocol + '://data.' + url + '/v1/query',
                 success: function (data) {
+                    $("#mtitle").val("");
+                    $("#artist").val("");
+                    $("#mgenre").val("");
+                    $("input[name='bitrate']").prop('checked', false);
                     $("#shareResult").html("Sharing is caring. Good job! :D");
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
@@ -418,6 +426,10 @@ $(document).ready(function () {
                 dataType: 'json',
                 url: protocol + '://data.' + url + '/v1/query',
                 success: function (data) {
+                    $("#movtitle").val("");
+                    $("#director").val("");
+                    $("#movgenre").val("");
+                    $("input[name='movquality']").prop('checked', false);
                     $("#shareResult").html("Sharing is caring. Good job! :D");
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
