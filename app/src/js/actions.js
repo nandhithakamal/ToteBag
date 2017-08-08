@@ -22,7 +22,7 @@ $(document).ready(function () {
     }
     else if(window.location.host === "totebag.gristmill14.hasura-app.io")
     {
-        proctocol = "https";
+        protocol = "https";
         url = "gristmill14.hasura-app.io";
     }
 
