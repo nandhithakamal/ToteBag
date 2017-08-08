@@ -78,11 +78,11 @@ $(document).ready(function(){
         processData: false
     });
 
-    $.ajax({
+    /*$.ajax({
         type: 'POST',
         crossDomain: true,
         dataType: 'json',
-        url: protocol + '://auth.' + url + '/v1/query',
+        url: protocol + '://data.' + url + '/v1/query',
         success: function(data){
             var n = data.length;
             var i = 0;
@@ -127,7 +127,7 @@ $(document).ready(function(){
 
         }),
         processData: false
-    });
+    });*/
 
     $("#logoutButton").click(function() {
         $.ajax({
