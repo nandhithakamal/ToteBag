@@ -19,6 +19,10 @@ $(document).ready(function () {
     else if(window.location.host === "app.nandhithakamal.hasura.me"){
         url = "nandhithakamal.hasura.me";
     }
+    else if(window.location.host === "totebag.gristmill14.hasura-app.io")
+    {
+        url = "gristmill14.hasura-app.io";
+    }
 
     function fetchResources(){
         var key = $("#searchText").val();
