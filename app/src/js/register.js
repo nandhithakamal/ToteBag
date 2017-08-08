@@ -101,7 +101,7 @@ $("#registerButton").on("click", function(){
                 document.cookie = "authToken = " + authToken + "; expires = " + date;
                 updateUserTable(hasuraID, username);
                 $("#successMessage").html("Hooray! Your account has been created!");
-                
+
             },
             error: function(jqXHR, textStatus, errorThrown) {
                 if(jqXHR.status == 409){
@@ -122,7 +122,7 @@ function updateUserTable(hasuraID, username){
         type: 'POST',
         crossDomain: true,
         dataType: 'json',
-        url: protocl + '://data.' + url + '/v1/query',
+        url: protocol + '://data.' + url + '/v1/query',
         headers: {
             'Content-Type': 'application/json',
             'Authorization': "Bearer " + authToken
