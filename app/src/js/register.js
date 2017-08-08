@@ -143,7 +143,7 @@ function updateUserTable(hasuraID, username){
             }
         }),
         success: function(data){
-            window.location.href = "/search";
+            window.location.href = "/about";
         },
         error: function(jqXHR, textStatus, errorThrown) {
             $("body").html(errorScreen);

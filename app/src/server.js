@@ -39,7 +39,7 @@ app.get('/login', function (req, res) {
         res.sendFile('html/login.html', {root});
     }
     else{
-        res.redirect("/search");
+        res.redirect("/about");
     }
 
 });
@@ -57,6 +57,19 @@ app.get('/register', function (req, res) {
     }
 
 });
+
+app.get('/about', function (req, res) {
+    //noinspection JSAnnotator
+    //if(localStorage.getItem('token'))
+    var cookie = req.cookies['authToken'];
+    if(cookie === undefined || cookie === "false"){
+        res.sendFile('html/landingpage.html', {root});
+    }
+    else{
+        res.render("about.ejs")
+    }
+});
+
 app.get('/search', function(req, res){
     var cookie = req.cookies['authToken'];
     console.log(cookie);
