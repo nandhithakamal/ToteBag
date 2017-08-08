@@ -82,7 +82,7 @@ $(document).ready(function(){
         type: 'POST',
         crossDomain: true,
         dataType: 'json',
-        url: protocol + '://auth' + url + '/v1/query',
+        url: protocol + '://auth.' + url + '/v1/query',
         success: function(data){
             var n = data.length;
             var i = 0;

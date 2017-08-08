@@ -78,7 +78,7 @@ $("#registerButton").on("click", function(){
             type: 'POST',
             crossDomain: true,
             dataType: 'json',
-            url: protocol + '://auth' + url + '/signup',
+            url: protocol + '://auth.' + url + '/signup',
             headers: {
                 'Content-Type': 'application/json',
             },
@@ -120,7 +120,7 @@ function updateUserTable(hasuraID, username){
         type: 'POST',
         crossDomain: true,
         dataType: 'json',
-        url: protocl + '://data' + url + '/v1/query',
+        url: protocl + '://data.' + url + '/v1/query',
         headers: {
             'Content-Type': 'application/json',
             'Authorization': "Bearer " + authToken
